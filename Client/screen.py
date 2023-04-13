@@ -15,7 +15,7 @@ import sqlite3
 class LoginModel(object):
     def __init__(self):
         # Create a database in RAM.
-        self._db = sqlite3.connect('base2.db')
+        self._db = sqlite3.connect('basenewtest.db')
         self._db.row_factory = sqlite3.Row
 
         # Create the basic contact table.
@@ -24,8 +24,16 @@ class LoginModel(object):
         #     CREATE TABLE users(
         #     id INTEGER PRIMARY KEY,
         #     email TEXT,
-        #     pass TEXT)
-            
+        #     pass TEXT,
+        #     is_admin TEXT,
+        #     number INTEGER,
+        #     polis INTEGER,
+        #     name TEXT,
+        #     surname TEXT,
+        #     age INTEGER,
+        #     priem BLOB,
+        #     priemtime FLOAT
+        #     )      
         # ''')
         # self._db.commit()
 
@@ -39,9 +47,9 @@ class LoginModel(object):
                                   user)
         self._db.commit()
     
-    def get_contact(self, user_id):
+    def get_auth_info(self):
         return self._db.cursor().execute(
-            "SELECT * from users WHERE id=:id", {"id": user_id}).fetchone()
+            "SELECT email, pass, id from users").fetchall()
 
     def update_current(self, details):
         if self.current_id is None:
@@ -50,22 +58,27 @@ class LoginModel(object):
             self._db.cursor().execute('''
             UPDATE users SET email=:email, pass=:pass WHERE id=:id''',
                                                 details)
+            self._db.commit()
             
-
+    def update_user(self, details):
+        user_id = self.current_id
+        self._db.cursor().execute('''
+        UPDATE users SET name=:name, surname=:surname, number=:number, polis=:polis, age =:age WHERE id=:id''', details)
+        self._db.commit()
 
     def get_summary(self):
         return self._db.cursor().execute(
-            "SELECT email, pass, id from users").fetchall()
+            "SELECT email, name, surname, number, polis, age, id from users").fetchall()
 
-    def get_contact(self, contact_id):
+    def get_user(self, user_id):
         return self._db.cursor().execute(
-            "SELECT * from users WHERE id=:id", {"id": contact_id}).fetchone()
+            "SELECT email, name, surname, number, polis, age from users WHERE id=:id", {"id": user_id}).fetchall()
 
-    # def get_current_contact(self):
-    # if self.current_id is None:
-    #     return {"name": "", "address": "", "phone": "", "email": "", "notes": ""}
-    # else:
-    #     return self.get_contact(self.current_id)
+    def get_current_user(self):
+        if self.current_id is None:
+            return {"email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}
+        else:
+            return self.get_user(self.current_id)
 
     # def delete_contact(self, contact_id):
     # self._db.cursor().execute('''
@@ -133,13 +146,14 @@ class LoginMenu(Frame):
         self.writen_email = self.data["email"]
         self.written_pass = self.data["pass"]
         self.itr = 0
-        self.usrs = self._model.get_summary()
+        self.usrs = self._model.get_auth_info()
         for row in self.usrs:
             self.id = row[2]
             self.email = row[0]
             self.passw = row[1]
             if (self.writen_email == self.email) and (self.written_pass == self.passw):
                 self.itr += 1
+                self._model.current_id = self.id
                 raise NextScene("User Menu")
             if self.itr == 0:
                 self._scene.add_effect(
@@ -147,9 +161,8 @@ class LoginMenu(Frame):
                             "Incorrect email/pass",
                             ["Ok"]))
 
-        
-
     
+
     def _reg(self):
         self._model.current_id = None
         raise NextScene("Register")
@@ -236,31 +249,119 @@ class UserMenu(Frame):
                                         screen.width * 2 // 3,
                                         hover_focus=True,
                                         can_scroll=False,
+                                        on_load=self._reload,
                                         title="User Menu",
                                         reduce_cpu=True)
         self._model = model
 
-        layout = Layout([100], fill_frame=True)
+        layout = Layout([100], fill_frame=False)
         self.add_layout(layout)
-        layout.add_widget(Label(label="WELCOME TO MOZGOPRAWWW", align="^", height=1))
+        layout.add_widget(Divider(draw_line=False, height=2))
+        layout.add_widget(Label(label="ГОСУСЛУГИ", align="^", height=3))
+
+        layoutmain = Layout([40,10,40], fill_frame=True)
+        self.add_layout(layoutmain)
+
+        self._email = Text("E-mail:", "email", readonly=True)
+        self._name = Text("Имя:", "name", readonly=True)
+        self._surname = Text("Фамилия:", "surname", readonly=True)
+        self._number = Text("Номер:", "number", readonly=True)
+        self._polis = Text("Полис:", "polis", readonly=True)
+        self._age = Text("Возраст:", "age", readonly=True)
+
+        layoutmain.add_widget(Label(label="Ваши данные:", align="<"),0)
+        layoutmain.add_widget(self._email,0)
+        layoutmain.add_widget(self._name,0)
+        layoutmain.add_widget(self._surname,0)
+        layoutmain.add_widget(self._number, 0)
+        layoutmain.add_widget(self._polis, 0)
+        layoutmain.add_widget(self._age, 0)
+        layoutmain.add_widget(Divider(draw_line=False))
+        layoutmain.add_widget(Label("Ваши приемы:", align="<"), 2)
         layoutbutton = Layout([1,1])
         self.add_layout(layoutbutton)
-        layoutbutton.add_widget(Button("Exit", self._exit), 0)
-        layoutbutton.add_widget(Button("click", self._click), 1)
+        layoutbutton.add_widget(Button("Выход", self._exit), 1)
+        layoutbutton.add_widget(Button("Изменение данных", self._change_data), 0)
         self.fix()
 
-    def _click(self):
-        pass
+    def _reload(self):
+        self._params = self._model.get_current_user()
+        for row in self._params:
+            self._email.value = row[0]
+            self._name.value = row[1]
+            self._surname.value = row[2]
+            self._number.value = str(row[3])
+            self._polis.value = str(row[4])
+            self._age.value = str(row[5])
+
+    def _change_data(self):
+        raise NextScene("User change data")
 
     @staticmethod
     def _exit():
         raise StopApplication("User press exit")
 
+class UserChangeMenu(Frame):
+    def __init__(self, screen, model):
+        super(UserChangeMenu, self).__init__(screen,
+                                        screen.height * 2 // 2,
+                                        screen.width * 2 // 3,
+                                        hover_focus=True,
+                                        can_scroll=False,
+                                        title="Изменение данных",
+                                        reduce_cpu=True)
+        self._model = model
+
+        layout = Layout([100], fill_frame=False)
+        self.add_layout(layout)
+        layout.add_widget(Divider(draw_line=False, height=2))
+        layout.add_widget(Label(label="ГОСУСЛУГИ", align="^", height=3))
+
+        layoutmain = Layout([1], fill_frame=True)
+        self.add_layout(layoutmain)
+        self._name = Text("Имя:", "name", validator="^[a-zA-Zа-яА-Я]*$", on_change=self._on_pick)
+        self._surname = Text("Фамилия:", "surname", validator="^[a-zA-Zа-яА-Я]*$", on_change=self._on_pick)
+        self._number = Text("Номер:", "number", validator="^[0-9]*$", max_length=11, on_change=self._on_pick)
+        self._polis = Text("Полис:", "polis", validator="^[0-9]*$", max_length=8, on_change=self._on_pick)
+        self._age = Text("Возраст:", "age", validator="^[0-9]*$", max_length=2, on_change=self._on_pick)
+        layoutmain.add_widget(Label(label="Введите данные:", align="<"),0)
+        layoutmain.add_widget(self._name,0)
+        layoutmain.add_widget(self._surname,0)
+        layoutmain.add_widget(self._number, 0)
+        layoutmain.add_widget(self._polis, 0)
+        layoutmain.add_widget(self._age, 0)
+        layoutbutton = Layout([1,1])
+        self.add_layout(layoutbutton)
+        self._save_return_button = Button("Сохранить", self._save_return)
+        layoutbutton.add_widget(self._save_return_button, 0)
+        layoutbutton.add_widget(Button("Не сохранять и выйти", self._dont_save_return), 1)
+        
+        self.fix()
+    
+    def reset(self):
+        # Do standard reset to clear out form, then populate with new data.
+        super(UserChangeMenu, self).reset()
+        #self.data = self._model.get_current_contact()
+
+    def _on_pick(self):
+        self._save_return_button.disabled = (self._name.is_valid is False) or (self._name.value == '') or (self._surname.value == '') or (self._surname.is_valid is False) or (self._number.value == '') or (self._number.is_valid is False) or (self._polis.value == '') or (self._polis.is_valid is False) or (self._age.value == '') or (self._age.is_valid is False)
+    
+
+    def _save_return(self):
+        self.save()
+        self.data["id"] = str(self._model.current_id)
+        self._model.update_user(self.data)
+        raise NextScene("User Menu")
+
+    def _dont_save_return(self):
+        raise NextScene("User Menu")
+
 def demo(screen, scene):
     scenes = [
         Scene([LoginMenu(screen, users)], -1, name="Login"),
         Scene([RegisterMenu(screen, users)], -1, name="Register"),
-        Scene([UserMenu(screen, users)], -1, name="User Menu")
+        Scene([UserMenu(screen, users)], -1, name="User Menu"),
+        Scene([UserChangeMenu(screen, users)], -1, name="User change data")
     ]
     screen.play(scenes, stop_on_resize=True, start_scene=scene, allow_int=True)
 
