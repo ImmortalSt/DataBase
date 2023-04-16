@@ -61,10 +61,12 @@ class ContactModel(object):
                                       details)
             self._db.commit()
 
-    def delete_contact(self, contact_id):
+    def delete_user(self, user_id):
         self._db.cursor().execute('''
-            DELETE FROM contacts WHERE id=:id''', {"id": contact_id})
+            DELETE FROM contacts WHERE id=:id''', {"id": user_id})
         self._db.commit()
+        self._db.cursor().execute('''
+            DELETE FROM user_priems WHERE user_id=:id''', {"id": user_id})
 
 
 class ListView(Frame):
@@ -159,6 +161,7 @@ class ContactView(Frame):
     def reset(self):
         # Do standard reset to clear out form, then populate with new data.
         super(ContactView, self).reset()
+        b = self._model.get_current_contact()
         self.data = self._model.get_current_contact()
 
     def _ok(self):
