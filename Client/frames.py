@@ -1,227 +1,7 @@
 from asciimatics.widgets import Frame, ListBox, Layout, Divider, Text, \
-    Button, TextBox, Widget, Label, DatePicker, DropdownList, CheckBox, PopUpDialog
-from asciimatics.scene import Scene
-from asciimatics.screen import Screen
-from asciimatics.exceptions import ResizeScreenError, NextScene, StopApplication
-from asciimatics.effects import Cycle, Stars
-from asciimatics.renderers import FigletText
-
-from datetime import datetime
-import sys
+    Button, Widget, Label, DropdownList, PopUpDialog
+from asciimatics.exceptions import NextScene, StopApplication
 import re
-import sqlite3
-
-class LoginModel(object):
-    def __init__(self):
-        # Create a database in RAM.
-        self._db = sqlite3.connect('basenewtest.db')
-        self._db.row_factory = sqlite3.Row
-
-        # Create the basic contact table.
-        
-        # self._db.cursor().execute('''
-        #     CREATE TABLE users(
-        #     id INTEGER PRIMARY KEY,
-        #     email TEXT,
-        #     pass TEXT,
-        #     is_admin TEXT,
-        #     number INTEGER,
-        #     polis INTEGER,
-        #     name TEXT,
-        #     surname TEXT,
-        #     age INTEGER,
-        #     priem BLOB,
-        #     priemtime FLOAT
-        #     )      
-        # ''')
-        # self._db.commit()
-        
-        # self._db.cursor().execute('''
-        #     CREATE TABLE medics(
-        #     id INTEGER PRIMARY KEY,
-        #     name TEXT,
-        #     surname TEXT,
-        #     specialty TEXT,
-        #     cabinet INTEGER
-        #     )
-        # ''')
-        # self._db.commit()
-
-        # self._db.cursor().execute('''
-        #     CREATE TABLE priemtimes(
-        #     id INTEGER PRIMARY KEY,
-        #     medic_id INTEGER,
-        #     time TEXT
-        #     )        
-        # ''')
-        # self._db.commit()
-        
-        # self._db.cursor().execute('''
-            # CREATE TABLE user_priems(
-            # id INTEGER PRIMARY KEY,
-            # user_id INTEGER,
-            # priem TEXT
-            # )                      
-        # ''')
-        # self._db.commit()
-        
-        # Current contact when editing.
-        self.current_id = None
-
-    def add(self, user):
-        self._db.cursor().execute('''
-            INSERT INTO users(email, pass)
-            VALUES(:email, :pass)''',
-                                  user)
-        self._db.commit()
-    
-    def get_auth_info(self):
-        return self._db.cursor().execute(
-            "SELECT email, pass, id, is_admin from users").fetchall()
-
-    def update_current(self, details):
-        if self.current_id is None:
-            self.add(details)
-        else:
-            self._db.cursor().execute('''
-            UPDATE users SET email=:email, pass=:pass WHERE id=:id''',
-                                                details)
-            self._db.commit()
-            
-    def update_user(self, details):
-        user_id = self.current_id
-        self._db.cursor().execute('''
-        UPDATE users SET name=:name, surname=:surname, number=:number, polis=:polis, age =:age WHERE id=:id''', details)
-        self._db.commit()
-
-    def get_summary(self):
-        return self._db.cursor().execute(
-            "SELECT email, name, surname, number, polis, age, id from users").fetchall()
-
-    def get_user(self, user_id):
-        return self._db.cursor().execute(
-            "SELECT email, name, surname, number, polis, age from users WHERE id=:id", {"id": user_id}).fetchall()
-
-    def get_current_user(self):
-        if self.current_id is None:
-            return {"email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}
-        else:
-            return self.get_user(self.current_id)
-
-    def get_medics_specialty(self):
-        return self._db.cursor().execute(
-            "SELECT specialty, id from medics").fetchall()
-        
-    def get_medic_name(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT name, surname, cabinet from medics WHERE id=:id", {"id": medic_id}).fetchall()
-        
-    def get_medic_time(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT time, id from priemtimes WHERE medic_id=:id and is_used = 0", {"id": medic_id}).fetchall()
-        
-    def get_medic_specialty(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT specialty from medics WHERE id=:id", {"id": medic_id}).fetchall()
-        
-    def get_medic_time_by_id(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT time from priemtimes WHERE medic_id=:id", {"id": medic_id}).fetchall()
-    
-    def make_appointment(self, priem):
-        self._db.cursor().execute('''
-            INSERT into user_priems(user_id, priem)
-            VALUES(:user_id, :priem)''',
-                                    priem)
-        self._db.commit()
-        
-    def make_priemtime_is_used(self, priem_id):
-        self._db.cursor().execute(
-            "UPDATE priemtimes SET is_used = 1 WHERE id=:id", {"id": priem_id})
-        self._db.commit()
-            
-    def get_appointments(self, user_id):
-        return self._db.cursor().execute(
-            "SELECT priem, id from user_priems WHERE user_id=:id", {"id": user_id}).fetchall()
-    
-    def get_users_list(self):
-        return self._db.cursor().execute(
-            "SELECT email, id from users WHERE is_admin IS NULL").fetchall()
-    
-    def admin_get_user(self, user_id):
-        return self._db.cursor().execute(
-            "SELECT * from users WHERE id=:id", {"id": user_id}).fetchone()
-    
-    def admin_get_current_user(self):
-        if self.current_id is None:
-            return {"email": "", "pass": "", "name": "", "surname": "", "number": "","polis": "","age": ""}
-        else:
-            return self.admin_get_user(self.current_id)
-    
-    def admin_add_user(self, user):
-        self._db.cursor().execute('''
-            INSERT INTO users(email, pass, name, surname, number, polis, age)
-            VALUES(:email, :pass, :name, :surname, :number, :polis, :age)''',                      
-                                    user)
-        self._db.commit()
-    
-    def admin_update_current_user(self, details):
-        if self.current_id is None:
-            self.admin_add_user(details)
-        else:
-            self._db.cursor().execute('''
-                UPDATE users SET email=:email, pass=:pass, name=:name,
-                surname=:surname, number=:number, polis=:polis, age=:age WHERE id=:id''',
-                                        details)
-            self._db.commit()
-    
-    def delete_user(self, user_id):
-        self._db.cursor().execute('''
-            DELETE FROM users WHERE id=:id''', {"id": user_id})
-        self._db.commit()
-        
-    def admin_get_medic(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT * from medics WHERE id=:id", {"id": medic_id}).fetchone()
-    
-    def admin_get_current_medic(self):
-        if self.current_id is None:
-            return {"name": "", "surname": "", "specialty": "", "cabinet": ""}
-        else:
-            return self.admin_get_medic(self.current_id)
-    
-    def admin_add_medic(self, medic):
-        self._db.cursor().execute('''
-            INSERT INTO medics(name, surname, specialty, cabinet)
-            VALUES(:name, :surname, :specialty, :cabinet)''',                      
-                                    medic)
-        self._db.commit()
-
-    def admin_update_current_medic(self, details):
-        if self.current_id is None:
-            self.admin_add_medic(details)
-        else:
-            self._db.cursor().execute('''
-                UPDATE medics SET name=:name, surname=:surname, specialty=:specialty,
-                cabinet=:cabinet WHERE id=:id''',
-                                        details)
-            self._db.commit()
-    
-    def delete_medic(self, medic_id):
-        self._db.cursor().execute('''
-            DELETE FROM medics WHERE id=:id''', {"id": medic_id})
-        self._db.commit()
-# class Greetings(Frame):
-#     def __init__(self, screen, model):
-#         super(LoginMenu, self).__init__(screen,
-#                                         screen.height * 2 // 3,
-#                                         screen.width * 2 // 3,
-#                                         can_scroll=False,
-#                                         )
-#         self._model = model
-
-#     def _next(self):
-#         raise NextScene("LoginMenu")
 
 
 class LoginMenu(Frame):
@@ -259,6 +39,7 @@ class LoginMenu(Frame):
 
         self._login_button = Button("Войти", self._login)
 
+        
         layout2.add_widget(self._login_button, 1)
         layout2.add_widget(Button("Регистрация", self._reg), 0)
         layout2.add_widget(Button("Выйти", self._exit), 2)
@@ -311,7 +92,6 @@ class LoginMenu(Frame):
     
     @staticmethod
     def _quit_on_yes(selected):
-        # Yes is the first button
         if selected == 0:
             raise StopApplication("User requested exit")
 
@@ -328,8 +108,7 @@ class RegisterMenu(Frame):
 
         layoutdiv = Layout([1])
         self.add_layout(layoutdiv)
-        layoutdiv.add_widget(Label(label="Запись на прием", align="^", height=1))
-        layoutdiv.add_widget(Divider(height=7, draw_line=False))
+        layoutdiv.add_widget(Divider(height=8, draw_line=False))
 
         self._email = Text("E-mail:", "email", max_length=20, validator=self._check_email, on_change=self._on_pick)
         self._pass = Text("Пароль:", "pass", hide_char='*', max_length=20, validator="^[a-zA-Z0-9]*$", on_change=self._on_pick)
@@ -351,7 +130,6 @@ class RegisterMenu(Frame):
         layout2.add_widget(Button("Вернуться", self._return), 1)
         self.fix()
         self._on_pick
-        #self._check
 
     def _on_pick(self):
         self._reg_button.disabled = (self._email.is_valid is False) or (self._email.value == '') or (self._pass.value == '') or (self._pass.is_valid is False) or (self._pass.value != self._pass2.value)
@@ -421,14 +199,7 @@ class UserMenu(Frame):
     def _reload(self, new_value = None):
         self._appointments.options = self._model.get_appointments(self._model.current_id)
         self._appointments.value = new_value
-        self._params = self._model.get_current_user()
-        for row in self._params:
-            self._email.value = row[0]
-            self._name.value = row[1]
-            self._surname.value = row[2]
-            self._number.value = row[3]
-            self._polis.value = row[4]
-            self._age.value = row[5]
+        self.data = self._model.get_current_user()
     
     def _appointment(self):
         raise NextScene("Make appointment")
@@ -469,6 +240,9 @@ class UserChangeMenu(Frame):
         layoutmain.add_widget(self._number, 0)
         layoutmain.add_widget(self._polis, 0)
         layoutmain.add_widget(self._age, 0)
+        layoutdiv = Layout([1])
+        self.add_layout(layoutdiv)
+        layoutdiv.add_widget(Divider(Widget.FILL_FRAME))
         layoutbutton = Layout([1,1])
         self.add_layout(layoutbutton)
         self._save_return_button = Button("Сохранить", self._save_return)
@@ -478,9 +252,8 @@ class UserChangeMenu(Frame):
         self.fix()
     
     def reset(self):
-        # Do standard reset to clear out form, then populate with new data.
         super(UserChangeMenu, self).reset()
-        #self.data = self._model.get_current_contact()
+        self.data = self._model.get_current_user()
 
     def _on_pick(self):
         self._save_return_button.disabled = (self._name.is_valid is False) or (self._name.value == '') or (self._surname.value == '') or (self._surname.is_valid is False) or (self._number.value == '') or (self._number.is_valid is False) or (self._polis.value == '') or (self._polis.is_valid is False) or (self._age.value == '') or (self._age.is_valid is False)
@@ -510,8 +283,9 @@ class MakeAppointment(Frame):
         self.add_layout(layout)
         layout.add_widget(Divider(draw_line=False, height=2))
         layout.add_widget(Label(label="Запись", align="^", height=3))
+        layout.add_widget(Divider(False, 3))
 
-        layoutmain = Layout([20,60,20],fill_frame=True)
+        layoutmain = Layout([30,60,10],fill_frame=True)
         self.add_layout(layoutmain)
         layoutmain.add_widget(Divider(False, 1), 0)
         self._specialty_choose = DropdownList(label="Специализация", options=self._model.get_medics_specialty(), on_change=self._show_medic_name_and_cab, fit=True)
@@ -523,10 +297,13 @@ class MakeAppointment(Frame):
         layoutmain.add_widget(Divider(False, 1), 2)
         self._time_choose = DropdownList(label="Время", options=[("/Выберите врача/", 1)], fit=True)
         layoutmain.add_widget(self._time_choose, 1)
-        #layoutmain.add_widget(self._medic_choose, 1)
-        #layoutmain.add_widget(self._time_choose, 2)
+        
+        layoutdiv = Layout([1])
+        self.add_layout(layoutdiv)
+        layoutdiv.add_widget(Divider(Widget.FILL_FRAME))
 
-        layoutbuttons = Layout([1,2])
+
+        layoutbuttons = Layout([1,1])
         self.add_layout(layoutbuttons)
         self._make_appointment_button = Button("Записаться", self._make_appointment)
         self._return_button = Button("Выйти", self._return)
@@ -584,12 +361,11 @@ class AdminPanel(Frame):
         layout.add_widget(Label(label="Добро пожаловать, администратор", align="^", height=3))
         
 
-        layout_buttons = Layout([1,1,1,1])
+        layout_buttons = Layout([1,1,1])
         self.add_layout(layout_buttons)
         layout_buttons.add_widget(Button("Список юзеров", self._get_user_list), 0)
         layout_buttons.add_widget(Button("Cписок врачей", self._get_medic_list), 1)
-        layout_buttons.add_widget(Button("Список доступных записей", self._get_priemtimes_list), 2)
-        layout_buttons.add_widget(Button("Выйти", self._exit), 3)
+        layout_buttons.add_widget(Button("Выйти", self._exit), 2)
         self.fix()
     def _get_user_list(self):
         raise NextScene("User list")
@@ -597,8 +373,6 @@ class AdminPanel(Frame):
     def _get_medic_list(self):
         raise NextScene("Medic list")
     
-    def _get_priemtimes_list(self):
-        pass
     
     def _exit(self):
         self._scene.add_effect(
@@ -791,16 +565,20 @@ class EditMedic(Frame):
         layout.add_widget(Text("Фамилия:", "surname"))    
         layout.add_widget(Text("Специальность:", "specialty"))
         layout.add_widget(Text("Кабинет:", "cabinet"))
-        layoutbuttons = Layout([1,1,1,1])
+        layoutbuttons = Layout([1,1,1])
         self.add_layout(layoutbuttons)
         layoutbuttons.add_widget(Button("OK", self._ok), 0)
-        layoutbuttons.add_widget(Button("Отмена", self._cancel), 3)
+        layoutbuttons.add_widget(Button("Редактировать приемы", self._edit_priems), 1)
+        layoutbuttons.add_widget(Button("Отмена", self._cancel), 2)
         self.fix()
         
     def reset(self):
         super(EditMedic, self).reset()
         self.data = self._model.admin_get_current_medic()
         
+    def _edit_priems(self):
+        raise NextScene("Priems list")
+    
     def _ok(self):
         self.save()
         self._model.admin_update_current_medic(self.data)
@@ -809,27 +587,100 @@ class EditMedic(Frame):
     @staticmethod
     def _cancel():
         raise NextScene("Medic list")
-                
-def demo(screen, scene):
-    scenes = [
-        Scene([LoginMenu(screen, users)], -1, name="Login"),
-        Scene([RegisterMenu(screen, users)], -1, name="Register"),
-        Scene([UserMenu(screen, users)], -1, name="User Menu"),
-        Scene([UserChangeMenu(screen, users)], -1, name="User change data"),
-        Scene([MakeAppointment(screen, users)], -1, name="Make appointment"),
-        Scene([AdminPanel(screen, users)], -1, name = "Admin panel"),
-        Scene([UserList(screen, users)], -1, name = "User list"),
-        Scene([EditUser(screen, users)], -1, name= "Edit user"),
-        Scene([MedicList(screen, users)], -1, name="Medic list"),
-        Scene([EditMedic(screen, users)], -1, name="Edit medic")
-    ]
-    screen.play(scenes, stop_on_resize=True, start_scene=scene, allow_int=True)
-
-users = LoginModel()
-last_scene = None
-while True:
-    try:
-        Screen.wrapper(demo, catch_interrupt=True, arguments=[last_scene])
-        sys.exit(0)
-    except ResizeScreenError as e:
-        last_scene = e.scene
+    
+class PriemsList(Frame):
+    def __init__(self, screen, model):
+        super(PriemsList, self).__init__(screen,
+                                         screen.height *2 // 2,
+                                         screen.width * 2 // 3,
+                                         hover_focus=True,
+                                         on_load=self._reload_list,
+                                         can_scroll=False,
+                                         title="Редактирование записей",
+                                         reduce_cpu=True)
+        self._model = model
+        
+        layoutmain = Layout([100], fill_frame=True)
+        self.add_layout(layoutmain)
+        self._time_list = ListBox(
+            Widget.FILL_FRAME,
+            model.admin_get_medic_time(model.current_id),
+            name="priemtimes",
+            add_scroll_bar=True,
+            on_change=self._on_pick,
+            on_select=self._edit)
+        self._edit_button = Button("Редактировать", self._edit)
+        self._delete_button = Button("Удалить", self._delete)
+        layoutmain.add_widget(self._time_list)
+        layoutmain.add_widget(Divider())
+        layoutbuttons = Layout([1,1,1,1])
+        self.add_layout(layoutbuttons)
+        layoutbuttons.add_widget(Button("Создать", self._add), 0)
+        layoutbuttons.add_widget(self._edit_button, 1)
+        layoutbuttons.add_widget(self._delete_button, 2)
+        layoutbuttons.add_widget(Button("Вернуться", self._quit), 3)
+        self.fix()
+        self._on_pick()
+        
+        
+    def _on_pick(self):
+        self._edit_button.disabled = self._time_list.value is None
+        self._delete_button.disabled = self._time_list.value is None
+    
+    def _reload_list(self, new_value=None):
+        self._time_list.options = self._model.admin_get_medic_time(self._model.current_id)
+        self._time_list.value = new_value
+        
+    def _add(self):
+        self._model.current_time_id = None
+        raise NextScene("Edit time")
+    
+    def _edit(self):
+        self.save()
+        self._model.current_time_id = self.data["priemtimes"]
+        raise NextScene("Edit time")
+    
+    def _delete(self):
+        self.save()
+        self._model.delete_time(self.data["priemtimes"])
+        self._reload_list()
+        
+    @staticmethod  
+    def _quit():
+        raise NextScene("Edit medic")
+    
+class EditTime(Frame):
+    def __init__(self, screen, model):
+        super(EditTime, self).__init__(screen,
+                                       screen.height * 2 // 2,
+                                       screen.width * 2 // 3,
+                                       hover_focus=True,
+                                       can_scroll=False,
+                                       title="Редактирование записей",
+                                       reduce_cpu=True)
+        self._model = model
+        
+        layout = Layout([100], fill_frame=True)
+        self.add_layout(layout)
+        layout.add_widget(Text("Время:", "time"))
+        layout.add_widget(Text("В использовании:", "is_used"))    
+        layoutbuttons = Layout([1,1,1])
+        self.add_layout(layoutbuttons)
+        layoutbuttons.add_widget(Button("OK", self._ok), 0)
+        layoutbuttons.add_widget(Button("Отмена", self._cancel), 2)
+        self.fix()
+        
+    def reset(self):
+        super(EditTime, self).reset()
+        self.data = self._model.admin_get_current_time()
+        
+    
+    def _ok(self):
+        self.save()
+        self._model.admin_update_current_time(self.data)
+        raise NextScene("Priems list")
+    
+    @staticmethod
+    def _cancel():
+        raise NextScene("Priems list")
+            
