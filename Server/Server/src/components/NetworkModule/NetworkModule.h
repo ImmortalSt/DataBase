@@ -10,7 +10,7 @@ using namespace std;
 class INetwork {
 public:
 	virtual int bindSock() = 0;
-	virtual int sendRequest() = 0;
+	virtual int sendRequest(string msg) = 0;
 	virtual string receiveRequest() = 0;
 };
 
@@ -18,7 +18,7 @@ class PlugNetwork : INetwork {
 	int bindSock() override {
 		return 1;
 	}
-	int sendRequest() override {
+	int sendRequest(string msg) override {
 		return 0;
 	}
 	string receiveRequest() override {
@@ -49,12 +49,9 @@ public:
 		listen_Sock = accept(server, (SOCKADDR*)&addr, &sizeofaddr);
 	}
 
-	void listenSock() {
-		listen(server, SOMAXCONN);
-	}
-
 	int bindSock() override {
 		int result = bind(server, (SOCKADDR*)&addr, sizeof(addr));
+		listen(server, SOMAXCONN);
 		if (result == SOCKET_ERROR) {
 			cout << "building socket failed, error: " << result << endl;
 			WSACleanup();
@@ -63,7 +60,8 @@ public:
 			return 0;
 	}
 
-	int sendRequest() override {
+	int sendRequest(string _msg) override {
+		char const* msg = _msg.c_str();
 		int result = send(listen_Sock, msg, strlen(msg), NULL);
 		if (result == SOCKET_ERROR) {
 			cout << "send failed, error: " << result << endl;
@@ -76,6 +74,7 @@ public:
 	}
 
 	string receiveRequest() override {
+		acceptSock();
 		char recvBuffer[512];
 		ZeroMemory(recvBuffer, 512);
 
@@ -96,12 +95,7 @@ public:
 		}		
 	}
 
-	void setMsg(char const* _msg) {
-		msg = _msg;
-	}
-
 private:
-	char const* msg;
 	SOCKET server;
 	SOCKET listen_Sock;
 	SOCKADDR_IN addr;
