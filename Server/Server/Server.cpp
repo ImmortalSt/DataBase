@@ -4,7 +4,7 @@
 #include "../Server/src/components/container/users_priems.h"
 #include <iostream>
 
-int main()
+int mainy()
 {
 	UserElement a;
 	UsersContainer b;
