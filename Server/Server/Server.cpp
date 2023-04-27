@@ -1,11 +1,33 @@
-﻿// Server.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#include "../Server/src/components/container/usersContainer.h"
+#include "../Server/src/components/container/medicsContainer.h"
+#include "../Server/src/components/container/priem_timesContainer.h"
+#include "../Server/src/components/container/users_priems.h"
 #include <iostream>
 
-int main()
+int mainy()
 {
-    std::cout << "Hello World!\n";
+	UserElement a;
+	UsersContainer b;
+	b.addElement(a);
+	b.GetUserElement(a.GetName(), a.GetSurname()).print();
+	b.removeElement(a.GetName(), a.GetSurname());
+	b.GetUserElement(a.GetName(), a.GetSurname()).print();
+	
+	User_priemElement c;
+	User_priemsContainer d;
+	d.addElement(c);
+	d.GetUser_priemElement(c.GetId(), c.GetPriem()).print();
+
+	Priem_timeElement e;
+	Priem_timesContainer f;
+	f.addElement(e);
+	f.GetPriem_timeElement(e.GetId(), e.GetTime()).print();
+
+	MedicElement g;
+	MedicsContainer h;
+	h.addElement(g);
+	h.GetMedicElement(g.GetName(), g.GetSurname()).print();
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
