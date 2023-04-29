@@ -142,7 +142,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Server.cpp" />
-    <ClCompile Include="src\components\NetworkModule\Example.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\components\container\IContainer.h" />

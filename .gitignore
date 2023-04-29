@@ -1,6 +1,10 @@
 # Prerequisites
 *.d
 
+Server/.vs/
+Server/Server/x64/
+Server/x64/
+
 # Compiled Object files
 *.slo
 *.lo

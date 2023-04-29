@@ -34,14 +34,25 @@ public:
 		addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 		addr.sin_port = htons(1111);
 		addr.sin_family = AF_INET;
-		server = socket(AF_INET, SOCK_STREAM, NULL);
-	}
 
+		WSADATA wsa_data;
+		WSAStartup(MAKEWORD(2, 2), &wsa_data);
+
+		server = socket(AF_INET, SOCK_STREAM, NULL);
+		int a = GetLastError();
+		bindSock();
+		acceptSock();
+	}
+	
 	Network(const char* address, int port) {
+		WSADATA wsa_data;
+		WSAStartup(MAKEWORD(2, 2), &wsa_data);
 		addr.sin_addr.s_addr = inet_addr(address);
 		addr.sin_port = htons(port);
 		addr.sin_family = AF_INET;
 		server = socket(AF_INET, SOCK_STREAM, NULL);
+		bindSock();
+		acceptSock();
 	}
 
 	void acceptSock() {
@@ -51,7 +62,7 @@ public:
 
 	int bindSock() override {
 		int result = bind(server, (SOCKADDR*)&addr, sizeof(addr));
-		listen(server, SOMAXCONN);
+		int a = listen(server, SOMAXCONN);
 		if (result == SOCKET_ERROR) {
 			cout << "building socket failed, error: " << result << endl;
 			WSACleanup();
