@@ -64,7 +64,7 @@ public:
 		int result = bind(server, (SOCKADDR*)&addr, sizeof(addr));
 		int a = listen(server, SOMAXCONN);
 		if (result == SOCKET_ERROR) {
-			cout << "building socket failed, error: " << result << endl;
+			cout << "\nbuilding socket failed, error: " << result << endl;
 			WSACleanup();
 		}
 		else
@@ -75,7 +75,7 @@ public:
 		char const* msg = _msg.c_str();
 		int result = send(listen_Sock, msg, strlen(msg), NULL);
 		if (result == SOCKET_ERROR) {
-			cout << "send failed, error: " << result << endl;
+			cout << "\nsend failed, error: " << result << endl;
 			closesocket(listen_Sock);
 			WSACleanup();
 			return result;
@@ -93,14 +93,14 @@ public:
 		string recvBuff(recvBuffer);
 
 		if (result > 0) {
-			cout << "Recieved bytes: " << result << endl;
-			cout << "Recieved data: " << recvBuff << endl;
+			cout << "\nRecieved bytes: " << result << endl;
+			cout << "\nRecieved data: " << recvBuff << endl;
 			return recvBuff;
 		}
 		else if (result == 0)
-			cout << "Connection closing" << endl;
+			cout << "\nConnection closing" << endl;
 		else {
-			cout << "Recieved failed" << endl;
+			cout << "\nRecieved failed" << endl;
 			closesocket(listen_Sock);
 			WSACleanup();
 		}		

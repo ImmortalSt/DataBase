@@ -6,51 +6,51 @@ class LoginModel(object):
         self._db = sqlite3.connect('basenewtest.db')
         self._db.row_factory = sqlite3.Row
 
-        # self._db.cursor().execute('''
-        #     CREATE TABLE users(
-        #     id INTEGER PRIMARY KEY,
-        #     email TEXT,
-        #     pass TEXT,
-        #     is_admin TEXT,
-        #     number INTEGER,
-        #     polis INTEGER,
-        #     name TEXT,
-        #     surname TEXT,
-        #     age INTEGER,
-        #     priem BLOB,
-        #     priemtime FLOAT
-        #     )
-        # ''')
-        # self._db.commit()
-
-        # self._db.cursor().execute('''
-        #     CREATE TABLE medics(
-        #     id INTEGER PRIMARY KEY,
-        #     name TEXT,
-        #     surname TEXT,
-        #     specialty TEXT,
-        #     cabinet INTEGER
-        #     )
-        # ''')
-        # self._db.commit()
-
-        # self._db.cursor().execute('''
-        #     CREATE TABLE priemtimes(
-        #     id INTEGER PRIMARY KEY,
-        #     medic_id INTEGER,
-        #     time TEXT
-        #     )
-        # ''')
-        # self._db.commit()
-
-        # self._db.cursor().execute('''
-        # CREATE TABLE user_priems(
-        # id INTEGER PRIMARY KEY,
-        # user_id INTEGER,
-        # priem TEXT
-        # )
-        # ''')
-        # self._db.commit()
+        #self._db.cursor().execute('''
+        #    CREATE TABLE users(
+        #    id INTEGER PRIMARY KEY,
+        #    email TEXT,
+        #    pass TEXT,
+        #    is_admin TEXT,
+        #    number INTEGER,
+        #    polis INTEGER,
+        #    name TEXT,
+        #    surname TEXT,
+        #    age INTEGER,
+        #    priem BLOB,
+        #    priemtime FLOAT
+        #    )
+        #''')
+        #self._db.commit()
+        #
+        #self._db.cursor().execute('''
+        #    CREATE TABLE medics(
+        #    id INTEGER PRIMARY KEY,
+        #    name TEXT,
+        #    surname TEXT,
+        #    specialty TEXT,
+        #    cabinet INTEGER
+        #    )
+        #''')
+        #self._db.commit()
+        #
+        #self._db.cursor().execute('''
+        #    CREATE TABLE priemtimes(
+        #    id INTEGER PRIMARY KEY,
+        #    medic_id INTEGER,
+        #    time TEXT
+        #    )
+        #''')
+        #self._db.commit()
+        #
+        #self._db.cursor().execute('''
+        #CREATE TABLE user_priems(
+        #id INTEGER PRIMARY KEY,
+        #user_id INTEGER,
+        #priem TEXT
+        #)
+        #''')
+        #self._db.commit()
 
         # Current contact when editing.
         self.current_id = None
