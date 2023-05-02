@@ -43,9 +43,9 @@ public:
 		}
 	}
 
-	User_priemElement GetUser_priemElement(int id, string priem) {
+	User_priemElement GetUser_priemElement( string priem) {
 		for (User_priemElement newelement : table[GetHash(priem)]) {
-			if (newelement.GetId() == id) {
+			if (newelement.GetPriem() == priem) {
 				return newelement;
 			}
 		}

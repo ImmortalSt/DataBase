@@ -13,6 +13,7 @@ private:
 public:
 
 	std::string ConvertToJson(Data data) {
+
 		return;
 	}
 

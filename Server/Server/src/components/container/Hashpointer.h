@@ -57,7 +57,7 @@ public:
 				return 1;
 			}
 			else {
-				cout << "Element in list was not deleted" << endl;
+				cout << "\nElement in list was not deleted\n" << endl;
 				return 0;
 			}
 		}

@@ -3,7 +3,7 @@
 
 class Priem_timeElement {
 private:
-	int id;
+	string id;
 	int medic_id;
 	string time;
 	int is_used;
@@ -19,7 +19,7 @@ public:
 		cout << id << " " << medic_id << " " << time << " " << is_used << "\n";
 	}
 
-	int GetId() { return id; }
+	string GetId() { return id; }
 	int GetMedic_id() { return medic_id; }
 	string GetTime() { return time; }
 	int GetIs_used() { return is_used; }
@@ -44,7 +44,7 @@ public:
 		}
 	}
 
-	Priem_timeElement GetPriem_timeElement(int id, string time) {
+	Priem_timeElement GetPriem_timeElement(string time, string id) {
 		for (Priem_timeElement newelement : table[GetHash(time)]) {
 			if (newelement.GetId() == id) {
 				return newelement;
@@ -52,7 +52,7 @@ public:
 		}
 	}
 
-	int removeElement(string time, int id) {
+	int removeElement(string time, string id) {
 		list<Priem_timeElement> newelement = table[GetHash(time)];
 		auto it = newelement.begin();
 		for (int i = 0; i < newelement.size(); i++) {
