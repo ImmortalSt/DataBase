@@ -29,5 +29,8 @@
     <ClInclude Include="src\components\container\plugContainer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="src\components\NetworkModule\NetworkModule.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

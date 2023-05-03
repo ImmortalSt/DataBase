@@ -1,20 +1,38 @@
-﻿// Server.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#include "../Server/src/components/container/usersContainer.h"
+#include "../Server/src/components/container/medicsContainer.h"
+#include "../Server/src/components/container/priem_timesContainer.h"
+#include "../Server/src/components/container/users_priems.h"
 #include <iostream>
+#include "src/components/NetworkModule/NetworkModule.h"
+#include <nlohmann/json.hpp>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+
+
+void main(string from_client) {
+	INetwork* network = (INetwork*)new Network();
+	MedicsContainer* medics = new MedicsContainer;
+	UsersContainer* users = new UsersContainer;
+	Priem_timesContainer* tm_priems = new Priem_timesContainer;
+	User_priemsContainer* us_priems = new User_priemsContainer;
+	while (true) {
+		std::string buffer = network->receiveRequest();
+		std::cout << buffer;
+		nlohmann::json recv =  nlohmann::json::parse(buffer);
+
+		if (recv["Method"] == "INSERT") {
+			std::cout << "\n ddd:" << recv["DBname"];
+		}
+		
+		
+		
+
+		
+
+		
+		
+		
+		
+	}
+	int a = 0;
+	
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.

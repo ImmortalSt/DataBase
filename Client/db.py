@@ -29,6 +29,7 @@ class LoginModel(object):
         ''')
         self._db.commit()
 
+
         self._db.cursor().execute('''
             CREATE TABLE IF NOT EXISTS medics(
             id INTEGER PRIMARY KEY,
