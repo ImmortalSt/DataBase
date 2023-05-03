@@ -61,13 +61,13 @@ public:
 	}
 
 	int bindSock() override {
-		/*int result = bind(server, (SOCKADDR*)&addr, sizeof(addr));
+		int result = bind(server, (SOCKADDR*)&addr, sizeof(addr));
 		int a = listen(server, SOMAXCONN);
 		if (result == SOCKET_ERROR) {
 			cout << "\nbuilding socket failed, error: " << result << endl;
 			WSACleanup();
 		}
-		else*/
+		else
 			return 0;
 	}
 
