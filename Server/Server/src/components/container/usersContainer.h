@@ -1,125 +1,53 @@
 #pragma once
-#include "IContainer.h"
+#include "../container/IContainer.h"
 
 
-class UserElement {
+class UsersContainer : IContainer {
 private:
-	int hash_id;
-	string email;
-	string pass;
-	int is_admin; // true - false
-	int number;
-	int polis;
-	string name;
-	string surname;
-	int age;
-public:
-	UserElement() {
-		hash_id = 1;
-		email = "1";
-		pass = "1";
-		is_admin = 0; // true - false
-		number = 1;
-		polis = 1;
-		name  = "1";
-		surname = "1";
-		age = 1;
-	}
-
-	void print() {
-		cout << hash_id <<" "<<  email <<" "<<   pass << " " << is_admin << "\n";
-	}
-
+	int id = 0;
+	json j;
+	vector<json>* users;
 public:
 
-	string GetEmail() {
-		return email;
-	}
-
-	string GetPass() {
-		return pass;
-	}
-
-	int GetIs_admin() {
-		return is_admin;
-	}
-
-	int GetNumber() {
-		return number;
-	}
-
-	int GetPolis() {
-		return polis;
-	}
-
-	string GetName() {
-		return name;
-	}
-
-	string GetSurname() {
-		return surname;
-	}
-
-	int GetAge() {
-		return age;
-	}
-};
-
-class UsersContainer {
-private:
-	const int CAPACITY = 100;
-	vector<list<UserElement>> table;
-
-	int GetHash(string name, string surname) {
-		int index = std::stoi(name + surname) % CAPACITY;
-		return index;
-	}
-public:
-	UsersContainer() {
-		table.reserve(CAPACITY);
-		for (int i = 0; i < CAPACITY; i++) {
-			table.push_back(list<UserElement>());
+	json getElement(json param) override {
+		for (int i = 0; i < users->size(); i++) {
+			if (param["email"] == users->at(i)["email"]) 
+				return users->at(i);
 		}
 	}
 
-	UserElement GetUserElement(string name, string surname) {
-		for (UserElement newelement : table[GetHash(name, surname)]) {
-			if (newelement.GetName() == name && newelement.GetSurname() == surname) {
-				return newelement;
-			}
-		}
-	}
+	int addElement(json param) override {
+		if (!(param.contains("id")))
+			param["id"] = ++id;
+		if (!(param.contains("is_admin")))
+			param["is_admin"] = "";
+		if (!(param.contains("number")))
+			param["number"] = "";
+		if (!(param.contains("polis")))
+			param["polis"] = "";
+		if (!(param.contains("name")))
+			param["name"] = "";
+		if (!(param.contains("surname")))
+			param["surname"] = "";
+		if (!(param.contains("age")))
+			param["age"] = "";
 
-	UserElement GetUserElement(int cabinet) {
-	}
+		users->push_back(param);
 
-	int removeElement(string name, string surname) {
-		list<UserElement> newelement = table[GetHash(name, surname)];
-		auto it = newelement.begin();
-		for (int i = 0; i < newelement.size(); i++) {
-			std::advance(it, i);
-			if ((*it).GetName() == name && (*it).GetSurname() == surname) {
-				newelement.erase(it);
+		return 0;
+	}
+	
+	int removeElementByParam(json param) override {
+		for (int i = 0; i < users->size(); i++) {
+			if (param["email"] == users->at(i)["email"]) {
+				users->erase(users->begin() + i);
 				return 0;
 			}
 		}
 	}
 
-	int addElement(UserElement element) {
-		table[GetHash(element.GetName(), element.GetSurname())].push_back(element);
+	int changeElementUsingParam() {
 		return 0;
 	}
 
-	int changeElement(UserElement old, UserElement new_one) {
-		list<UserElement> newelement = table[GetHash(old.GetName(), old.GetSurname())];
-		auto it = newelement.begin();
-		for (int i = 0; i < newelement.size(); i++) {
-			std::advance(it, i);
-			if ((*it).GetName() == old.GetName() && (*it).GetSurname() == old.GetSurname()) {
-				newelement.erase(it);
-				newelement.insert(it, new_one);
-				return 0;
-			}
-		}
-	}
 };
