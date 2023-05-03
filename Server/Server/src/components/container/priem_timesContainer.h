@@ -1,85 +1,43 @@
 #pragma once
-#include "IContainer.h"
+#include "../container/IContainer.h"
 
-class Priem_timeElement {
+class PriemTimesContainer : IContainer {
 private:
-	string id;
-	int medic_id;
-	string time;
-	int is_used;
-public:
-	Priem_timeElement() {
-		id = 1;
-		medic_id = 1;
-		time = "1";
-		is_used = 0;
-	}
-
-	void  print() {
-		cout << id << " " << medic_id << " " << time << " " << is_used << "\n";
-	}
-
-	string GetId() { return id; }
-	int GetMedic_id() { return medic_id; }
-	string GetTime() { return time; }
-	int GetIs_used() { return is_used; }
-};
-
-class Priem_timesContainer {
-private:
-	const int CAPACITY = 100;
-	vector<list<Priem_timeElement>> table;
-
-	int GetHash(string time) {
-		int index = std::stoi(time) % CAPACITY;
-		return index;
-	}
-
+	int id = 0;
+	json j;
+	vector<json>* tmpriems;
 public:
 
-	Priem_timesContainer() {
-		table.reserve(CAPACITY);
-		for (int i = 0; i < CAPACITY; i++) {
-			table.push_back(list<Priem_timeElement>());
+	json getElement(json param) override {
+		for (int i = 0; i < tmpriems->size(); i++) {
+			if (param["priems"] == tmpriems->at(i)["priems"] && param["id"] == tmpriems->at(i)["id"])
+				return tmpriems->at(i);
 		}
 	}
 
-	Priem_timeElement GetPriem_timeElement(string time, string id) {
-		for (Priem_timeElement newelement : table[GetHash(time)]) {
-			if (newelement.GetId() == id) {
-				return newelement;
-			}
-		}
-	}
-
-	int removeElement(string time, string id) {
-		list<Priem_timeElement> newelement = table[GetHash(time)];
-		auto it = newelement.begin();
-		for (int i = 0; i < newelement.size(); i++) {
-			std::advance(it, i);
-			if ((*it).GetId() == id) {
-				newelement.erase(it);
-				return 0;
-			}
-		}
-	}
-	int addElement(Priem_timeElement element) {
-		table[GetHash(element.GetTime())].push_back(element);
+	int addElement(json param) override {
+		if (!(param.contains("id")))
+			param["id"] = ++id;
+		if (!(param.contains("medic_id")))
+			param["medeic_id"] = 0;
+		if (!(param.contains("time")))
+			param["time"] = "";
+		if (!(param.contains("is_used")))
+			param["is_used"] = 1;
+		tmpriems->push_back(param);
 		return 0;
 	}
 
-	int changeElement(Priem_timeElement old, Priem_timeElement new_one) {
-		list<Priem_timeElement> newelement = table[GetHash(old.GetTime())];
-		auto it = newelement.begin();
-		for (int i = 0; i < newelement.size(); i++) {
-			std::advance(it, i);
-			if ((*it).GetId() == old.GetId()) {
-				newelement.erase(it);
-				newelement.insert(it, new_one);
+	int removeElementByParam(json param) override {
+		for (int i = 0; i < tmpriems->size(); i++) {
+			if (param["priems"] == tmpriems->at(i)["priems"] && param["id"] == tmpriems->at(i)["id"]) {
+				tmpriems->erase(tmpriems->begin() + i);
 				return 0;
 			}
-		};
+		}
+	}
+
+	int changeElementUsingParam() {
+		return 0;
 	}
 };
-
-

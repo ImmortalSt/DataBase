@@ -1,90 +1,48 @@
 #pragma once
-#include "IContainer.h"
+#include "../container/IContainer.h"
 
-class MedicElement {
+class MedicsContainer : IContainer {
 private:
-	int id;
-	string name;
-	string surname;
-	string specialist;
-	int cabinet;
+	int id = 0;
+	json j;
+	vector<json>* medics;
 public:
-	MedicElement() {
-		id = 0;
-		name = "0 ";
-		surname = "0 ";
-		specialist = "0 ";
-		cabinet = 0;
-	}
 
-	void print() {
-		cout << id << " " << name << " " << surname << " " << specialist << " " << cabinet << "\n";
-	}
-
-	int GetId() { return id; }
-	string GetName() { return name; }
-	string GetSurname() { return surname; }
-	string GetSpecialist() { return specialist; }
-	int GetCabinet() { return cabinet; }
-};
-
-class MedicsContainer {
-private: 
-	const int CAPACITY = 100;
-	vector<list<MedicElement>> table;
-
-	int GetHash(string name, string surname) {
-		int index = std::stoi(name + surname) % CAPACITY;
-		return index;
-	}
-
-public:
-	MedicsContainer() {
-		table.reserve(CAPACITY);
-		for (int i = 0; i < CAPACITY; i++) {
-			table.push_back(list<MedicElement>());
-		}
-	}
-
-	MedicElement GetMedicElement(string name, string surname) {
-		for (MedicElement newelement : table[GetHash(name, surname)]) {
-			if (newelement.GetName() == name && newelement.GetSurname() == surname) {
-				return newelement;
+	json getElement(json param) override {
+		for (int i = 0; i, medics->size(); i++) {
+			if (param["surname"] == medics->at(i)["surname"] && param["name"] == medics->at(i)["name"]) {
+				return medics->at(i);
 			}
 		}
 	}
 
-	MedicElement GetMedicElement(int cabinet) {
-	}
-
-	int removeElement(string name, string surname) {
-		list<MedicElement> newelement = table[GetHash(name, surname)];
-		auto it = newelement.begin();
-		for (int i = 0; i < newelement.size(); i++) {
-			std::advance(it, i);
-			if ((*it).GetName() == name && (*it).GetSurname() == surname) {
-				newelement.erase(it);
-				return 0;
-			}
-		}
-	}
-
-	int addElement(MedicElement element) {
-		table[GetHash(element.GetName(), element.GetSurname())].push_back(element);
+	int addElement(json param) override {
+		if (!(param.contains("id")))
+			param["id"] = ++id;
+		if (!(param.contains("name")))
+			param["name"] = "";
+		if (!(param.contains("surname")))
+			param["surname"] = "";
+		if (!(param.contains("speciality")))
+			param["speciality"] = "";
+		if (!(param.contains("cabinet")))
+			param["cabinet"] = 666;
+		medics->push_back(param);
 		return 0;
 	}
 
-	int changeElement(MedicElement old, MedicElement new_one) {
-		list<MedicElement> newelement = table[GetHash(old.GetName(),old.GetSurname())];
-		auto it = newelement.begin();
-		for (int i = 0; i < newelement.size(); i++) {
-			std::advance(it, i);
-			if ((*it).GetName() == old.GetName() && (*it).GetSurname() == old.GetSurname()) {
-				newelement.erase(it);
-				newelement.insert(it, new_one);
+	int removeElementByParam(json param) override {
+		for (int i = 0; i < medics->size(); i++) {
+			if (param["surname"] == medics->at(i)["surname"] && param["name"] == medics->at(i)["name"]) {
+				medics->erase(medics->begin() + i);
 				return 0;
 			}
 		}
 	}
 
+	int changeElementUsingParam() {
+		return 0;
+	}
+
+	MedicsContainer() = default;
 };
