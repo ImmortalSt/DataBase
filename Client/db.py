@@ -1,94 +1,115 @@
 import sqlite3
-
+import socket
+import json
+#nc = connect('localhost', 1111)
 
 class LoginModel(object):
     def __init__(self):
+        self.host = '127.0.0.1'
+        self.port = 1111
+        self.client_socket = socket.socket()
+        self.client_socket.connect((self.host, self.port))
         self._db = sqlite3.connect('basenewtest.db')
         self._db.row_factory = sqlite3.Row
 
-        #self._db.cursor().execute('''
-        #    CREATE TABLE users(
-        #    id INTEGER PRIMARY KEY,
-        #    email TEXT,
-        #    pass TEXT,
-        #    is_admin TEXT,
-        #    number INTEGER,
-        #    polis INTEGER,
-        #    name TEXT,
-        #    surname TEXT,
-        #    age INTEGER,
-        #    priem BLOB,
-        #    priemtime FLOAT
-        #    )
-        #''')
-        #self._db.commit()
-        #
-        #self._db.cursor().execute('''
-        #    CREATE TABLE medics(
-        #    id INTEGER PRIMARY KEY,
-        #    name TEXT,
-        #    surname TEXT,
-        #    specialty TEXT,
-        #    cabinet INTEGER
-        #    )
-        #''')
-        #self._db.commit()
-        #
-        #self._db.cursor().execute('''
-        #    CREATE TABLE priemtimes(
-        #    id INTEGER PRIMARY KEY,
-        #    medic_id INTEGER,
-        #    time TEXT
-        #    )
-        #''')
-        #self._db.commit()
-        #
-        #self._db.cursor().execute('''
-        #CREATE TABLE user_priems(
-        #id INTEGER PRIMARY KEY,
-        #user_id INTEGER,
-        #priem TEXT
-        #)
-        #''')
-        #self._db.commit()
+        self._db.cursor().execute('''
+            CREATE TABLE IF NOT EXISTS users(
+            id INTEGER PRIMARY KEY,
+            email TEXT,
+            pass TEXT,
+            is_admin TEXT,
+            number INTEGER,
+            polis INTEGER,
+            name TEXT,
+            surname TEXT,
+            age INTEGER,
+            priem BLOB,
+            priemtime FLOAT
+            )
+        ''')
+        self._db.commit()
+
+
+        self._db.cursor().execute('''
+            CREATE TABLE IF NOT EXISTS medics(
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            surname TEXT,
+            specialty TEXT,
+            cabinet INTEGER
+            )
+        ''')
+        self._db.commit()
+
+        self._db.cursor().execute('''
+            CREATE TABLE IF NOT EXISTS priemtimes(
+            id INTEGER PRIMARY KEY,
+            medic_id INTEGER,
+            time TEXT
+            )
+        ''')
+        self._db.commit()
+
+        self._db.cursor().execute('''
+        CREATE TABLE IF NOT EXISTS user_priems(
+        id INTEGER PRIMARY KEY,
+        user_id INTEGER,
+        priem TEXT
+        )
+        ''')
+        self._db.commit()
 
         # Current contact when editing.
         self.current_id = None
         self.current_time_id = None
+    
+    def collect_data(self, db_name, method, param):
+        data = {"db_name": db_name, "method": method, "param": param}
+        return json.dumps(data)
+        
 
-    def add(self, user):
-        self._db.cursor().execute('''
-            INSERT INTO users(email, pass)
-            VALUES(:email, :pass)''',
-                                  user)
-        self._db.commit()
+    def send(self, data):
+        self.client_socket.send(data.encode())
+        
+    def receive(self):
+        received_data = self.client_socket.recv(1024).decode()
+        parsed_data = json.loads(received_data)
+        return parsed_data
+
+    def add(self, user_data):
+        query = self.collect_data("users", "INSERT", user_data)
+        self.send(query)
 
     def get_auth_info(self):
-        return self._db.cursor().execute(
-            "SELECT email, pass, id, is_admin from users").fetchall()
+        auth_info = {"email": "", "password": "", "id": "", "is_admin": ""}
+        data = self.collect_data("users", "SELECT", auth_info)
+        self.send(data)
+        return self.receive()
 
     def update_current(self, details):
         if self.current_id is None:
             self.add(details)
         else:
-            self._db.cursor().execute('''
-            UPDATE users SET email=:email, pass=:pass WHERE id=:id''',
-                                      details)
-            self._db.commit()
+            update_query = self.collect_data("users", "UPDATE WHERE id=:id", details)
+            self.send(update_query)
 
-    def update_user(self, details):
-        self._db.cursor().execute('''
-        UPDATE users SET name=:name, surname=:surname, number=:number, polis=:polis, age =:age WHERE id=:id''', details)
-        self._db.commit()
+    def update_user(self, user_details):
+        user_data = self.collect_data("users", "UPDATE WHERE id=:id", user_details)
+        self.send(user_data)
 
     def get_summary(self):
-        return self._db.cursor().execute(
-            "SELECT email, name, surname, number, polis, age, id from users").fetchall()
+        user_fields = {"email": "", "name": "", "surname": "", "phone_number": "", "policy_number": "", "age": ""}
+        users = self.collect_data("users", "SELECT", user_fields)
+        self.send(users)
+        return self.receive()
+            
 
     def get_user(self, user_id):
-        return self._db.cursor().execute(
-            "SELECT email, name, surname, number, polis, age from users WHERE id=:id", {"id": user_id}).fetchone()
-
+        user = {"id": user_id, "email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}
+        query = self.collect_data("users", "SELECT WHERE id=:id", user)
+        self.send(query)
+        return self.receive()
+        
     def get_current_user(self):
         if self.current_id is None:
             return {"email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}
@@ -96,16 +117,22 @@ class LoginModel(object):
             return self.get_user(self.current_id)
 
     def get_medics_specialty(self):
-        return self._db.cursor().execute(
-            "SELECT specialty, id from medics").fetchall()
+        query_params = {"specialty": "", "id": ""}
+        query_result = self.collect_data("medics", "SELECT", query_params)
+        self.send(query_result)
+        return self.receive()
 
     def get_medic_name(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT name, surname, cabinet from medics WHERE id=:id", {"id": medic_id}).fetchall()
-
+        medic_data = {"id": medic_id, "name:": "", "surname": "", "cabinet": ""}
+        query = self.collect_data("medics", "SELECT WHERE id=:id", medic_data)
+        self.send(query)
+        return self.receive()
+        
     def get_medic_time(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT time, id from priemtimes WHERE medic_id=:id and is_used = 0", {"id": medic_id}).fetchall()
+        medic_data = {"medic_id": medic_id, "is_used": 0, "time": "", "id": ""}
+        query = self.collect_data("priemtimes", "SELECT WHERE id=:id and is_used = 0", medic_data)
+        self.send(query)
+        return self.receive()
 
     def get_medic_specialty(self, medic_id):
         return self._db.cursor().execute(
