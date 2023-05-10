@@ -31,17 +31,14 @@ class Network : INetwork {
 public:
 
     Network() {
-        addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-        addr.sin_port = htons(1111);
-        addr.sin_family = AF_INET;
-
         WSADATA wsa_data;
         WSAStartup(MAKEWORD(2, 2), &wsa_data);
 
+        addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+        addr.sin_port = htons(1111);
+        addr.sin_family = AF_INET;
         server = socket(AF_INET, SOCK_STREAM, NULL);
-        int a = GetLastError();
         bindSock();
-        //acceptSock();
     }
 
     Network(const char* address, int port) {
@@ -52,7 +49,6 @@ public:
         addr.sin_family = AF_INET;
         server = socket(AF_INET, SOCK_STREAM, NULL);
         bindSock();
-        //acceptSock();
     }
 
     void acceptSock() {
@@ -63,16 +59,8 @@ public:
     int bindSock() override {
         bind(server, (SOCKADDR*)&addr, sizeof(addr));
         int a = listen(server, SOMAXCONN);
-        /*int result = bind(server, (SOCKADDR*)&addr, sizeof(addr));
-        int a = listen(server, SOMAXCONN);
-        if (result == SOCKET_ERROR) {
-          cout << "\nbuilding socket failed, error: " << result << endl;
-          WSACleanup();
-        }
-        else
-          return 0;*/
+        int u = GetLastError();
         return 0;
-
     }
 
     int sendRequest(string _msg) override {
@@ -84,8 +72,10 @@ public:
             WSACleanup();
             return result;
         }
-        else
+        else {
+            cout << "Server send: " << _msg << endl;
             return 0;
+        }
 
     }
 
