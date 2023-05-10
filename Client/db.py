@@ -82,7 +82,7 @@ class LoginModel(object):
 
     def get_auth_info(self):
         auth_info = {"email": "", "password": "", "id": "", "is_admin": ""}
-        data = self.collect_data("users", "SELECT", auth_info)
+        data = self.collect_data("users", "SELECT email, pass, id, is_admin", auth_info)
         self.send(data)
         return self.receive()
 
@@ -90,23 +90,23 @@ class LoginModel(object):
         if self.current_id is None:
             self.add(details)
         else:
-            update_query = self.collect_data("users", "UPDATE WHERE id=:id", details)
+            update_query = self.collect_data("users", "UPDATE SET email=:email, pass=:pass WHERE id=:id", details)
             self.send(update_query)
 
     def update_user(self, user_details):
-        user_data = self.collect_data("users", "UPDATE WHERE id=:id", user_details)
+        user_data = self.collect_data("users", "UPDATE SET name=:name, surname=:surname, number=:number, polis=:polis, age =:age WHERE id=:id", user_details)
         self.send(user_data)
 
     def get_summary(self):
-        user_fields = {"email": "", "name": "", "surname": "", "phone_number": "", "policy_number": "", "age": ""}
-        users = self.collect_data("users", "SELECT", user_fields)
+        user_fields = {"email": "", "name": "", "surname": "", "number": "", "polis": "", "age": "", "id": ""}
+        users = self.collect_data("users", "SELECT email, name, surname, number, polis, age, id", user_fields)
         self.send(users)
         return self.receive()
             
 
     def get_user(self, user_id):
         user = {"id": user_id, "email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}
-        query = self.collect_data("users", "SELECT WHERE id=:id", user)
+        query = self.collect_data("users", "SELECT email, name, surname, number, polis, age WHERE id=:id", user)
         self.send(query)
         return self.receive()
         
@@ -118,54 +118,64 @@ class LoginModel(object):
 
     def get_medics_specialty(self):
         query_params = {"specialty": "", "id": ""}
-        query_result = self.collect_data("medics", "SELECT", query_params)
+        query_result = self.collect_data("medics", "SELECT specialty, id", query_params)
         self.send(query_result)
         return self.receive()
 
     def get_medic_name(self, medic_id):
         medic_data = {"id": medic_id, "name:": "", "surname": "", "cabinet": ""}
-        query = self.collect_data("medics", "SELECT WHERE id=:id", medic_data)
+        query = self.collect_data("medics", "SELECT name, surname, cabinet WHERE id=:id", medic_data)
         self.send(query)
         return self.receive()
         
     def get_medic_time(self, medic_id):
         medic_data = {"medic_id": medic_id, "is_used": 0, "time": "", "id": ""}
-        query = self.collect_data("priemtimes", "SELECT WHERE id=:id and is_used = 0", medic_data)
+        query = self.collect_data("priemtimes", "SELECT time, id WHERE medic_id=:id and is_used = 0", medic_data)
         self.send(query)
         return self.receive()
 
     def get_medic_specialty(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT specialty from medics WHERE id=:id", {"id": medic_id}).fetchall()
+        specialty = {"id": medic_id, "specialty": ""}
+        query = self.collect_data("medics", "SELECT specialty WHERE id=:id", specialty)
+        self.send(query)
+        
 
     def get_medic_time_by_id(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT time from priemtimes WHERE medic_id=:id", {"id": medic_id}).fetchall()
-
+        medeic_time = {"id": medic_id, "time": ""}
+        query = self.collect_data("priemtimes", "SELECT time WHERE medic_id=:id", medeic_time)
+        self.send(query)
+        return self.receive()
+        
     def make_appointment(self, priem):
-        self._db.cursor().execute('''
-            INSERT into user_priems(user_id, priem)
-            VALUES(:user_id, :priem)''',
-                                  priem)
-        self._db.commit()
+        appointment = {"user_id": priem["user_id"], "priem": priem["priem"]}
+        query = self.collect_data("user_priems", "INSERT", appointment)
+        self.send(query)
+        
 
     def make_priemtime_is_used(self, priem_id):
-        self._db.cursor().execute(
-            "UPDATE priemtimes SET is_used = 1 WHERE id=:id", {"id": priem_id})
-        self._db.commit()
+        is_used = {"id": priem_id, "is_used": 1}
+        query = self.collect_data("priemtimes", "UPDATE SET is_used = 1 WHERE id=:id", is_used)
+        self.send(query)
+
 
     def get_appointments(self, user_id):
-        return self._db.cursor().execute(
-            "SELECT priem, id from user_priems WHERE user_id=:id", {"id": user_id}).fetchall()
-
+        appointments = {"user_id": user_id, "priem": "", "id": ""}
+        query = self.collect_data("user_priems", "SELECT priem, id WHERE user_id=:id", appointments)
+        self.send(query)
+        return self.receive()
+    
     def get_users_list(self):
-        return self._db.cursor().execute(
-            "SELECT email, id from users WHERE is_admin IS NULL").fetchall()
-
+        users_list = {"email": "", "id": ""}
+        query = self.collect_data("users", "SELECT email, id", users_list)
+        self.send(query)
+        return self.receive()
+        
     def admin_get_user(self, user_id):
-        return self._db.cursor().execute(
-            "SELECT * from users WHERE id=:id", {"id": user_id}).fetchone()
-
+        get_user = {"id": user_id, "email": "", "pass": "", "is_admin": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}
+        query = self.collect_data("users", "SELECT * WHERE id=:id", get_user)
+        self.send(query)
+        return self.receive()
+        
     def admin_get_current_user(self):
         if self.current_id is None:
             return {"email": "", "pass": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}
@@ -173,31 +183,29 @@ class LoginModel(object):
             return self.admin_get_user(self.current_id)
 
     def admin_add_user(self, user):
-        self._db.cursor().execute('''
-            INSERT INTO users(email, pass, name, surname, number, polis, age)
-            VALUES(:email, :pass, :name, :surname, :number, :polis, :age)''',
-                                  user)
-        self._db.commit()
+        add_user = {"email": user["email"], "pass": user["pass"], "name": user["name"], "surname": user["surname"], "number": user["number"], "polis": user["polis"], "age": user["age"]}
+        query = self.collect_data("users", "INSERT", add_user)
+        self.send(query)
 
     def admin_update_current_user(self, details):
         if self.current_id is None:
             self.admin_add_user(details)
         else:
-            self._db.cursor().execute('''
-                UPDATE users SET email=:email, pass=:pass, name=:name,
-                surname=:surname, number=:number, polis=:polis, age=:age WHERE id=:id''',
-                                      details)
-            self._db.commit()
+            update_user = {"id": self.current_id, "email": details["email"], "pass": details["pass"], "name": details["name"], "surname": details["surname"], "number": details["number"], "polis": details["polis"], "age": details["age"]}
+            query = self.collect_data("users", "UPDATE WHERE id=:id", update_user)
+            self.send(query)
 
     def delete_user(self, user_id):
-        self._db.cursor().execute('''
-            DELETE FROM users WHERE id=:id''', {"id": user_id})
-        self._db.commit()
+        delete = {"id": user_id}
+        query = self.collect_data("users", "DELETE WHERE id=:id", delete)
+        self.send(query)
 
     def admin_get_medic(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT * from medics WHERE id=:id", {"id": medic_id}).fetchone()
-
+        get_medic = {"id": medic_id, "name": "", "surname": "", "specialty": "", "cabinet": ""}
+        query = self.collect_data("medics", "SELECT * WHERE id=:id", get_medic)
+        self.send(query)
+        return self.receive()
+    
     def admin_get_current_medic(self):
         if self.current_id is None:
             return {"name": "", "surname": "", "specialty": "", "cabinet": ""}
@@ -205,35 +213,35 @@ class LoginModel(object):
             return self.admin_get_medic(self.current_id)
 
     def admin_add_medic(self, medic):
-        self._db.cursor().execute('''
-            INSERT INTO medics(name, surname, specialty, cabinet)
-            VALUES(:name, :surname, :specialty, :cabinet)''',
-                                  medic)
-        self._db.commit()
+        add_medic = {"name": medic["name"], "surname": medic["surname"], "specialty": medic["specialty"], "cabinet": medic["cabinet"]}
+        query = self.collect_data("medics", "INSERT", add_medic)
+        self.send(query)
 
     def admin_update_current_medic(self, details):
         if self.current_id is None:
             self.admin_add_medic(details)
         else:
-            self._db.cursor().execute('''
-                UPDATE medics SET name=:name, surname=:surname, specialty=:specialty,
-                cabinet=:cabinet WHERE id=:id''',
-                                      details)
-            self._db.commit()
+            update_medic = {"id": self.current_id, "name": details["name"], "surname": details["surname"], "specialty": details["specialty"], "cabinet": details["cabinet"]}
+            query = self.collect_data("medics", "UPDATE WHERE id=:id", update_medic)
+            self.send(query)
 
     def delete_medic(self, medic_id):
-        self._db.cursor().execute('''
-            DELETE FROM medics WHERE id=:id''', {"id": medic_id})
-        self._db.commit()
+        delete = {"id": medic_id}
+        query = self.collect_data("medics", "DELETE WHERE id=:id", delete)
+        self.send(query)
 
     def admin_get_medic_time(self, medic_id):
-        return self._db.cursor().execute(
-            "SELECT time, id from priemtimes WHERE medic_id=:id", {"id": medic_id}).fetchall()
+        medic_time = {"medic_id": medic_id, "time": "", "id": ""}
+        query = self.collect_data("priemtimes", "SELECT time, id WHERE medic_id=:id", medic_time)
+        self.send(query)
+        return self.receive()
 
     def admin_get_time(self, time_id):
-        return self._db.cursor().execute(
-            "SELECT * from priemtimes WHERE id=:id", {"id": time_id}).fetchone()
-
+        time = {"id": time_id, "medic_id": "", "time": "", "is_used": ""}
+        query = self.collect_data("priemtimes", "SELECT * WHERE id=:id", time)
+        self.send(query)
+        return self.receive()
+    
     def admin_get_current_time(self):
         if self.current_time_id is None:
             return {"time": "", "is_used": ""}
@@ -241,21 +249,20 @@ class LoginModel(object):
             return self.admin_get_time(self.current_time_id)
 
     def admin_add_time(self, time):
-        self._db.cursor().execute('''
-            INSERT INTO priemtime(medic_id, time, is_used)
-            VALUES(:medic_id, :time, :is_used)''',
-                                  time)
-        self._db.commit()
+        time = {"medic_id": time["medic_id"], "time": time["time"], "is_used": time["is_used"]}
+        query = self.collect_data("priemtimes", "INSERT", time)
+        self.send(query)
+        
 
     def admin_update_current_time(self, details):
         if self.current_id is None:
             self.admin_add_time(details)
         else:
-            self._db.cursor().execute('''
-                UPDATE priemtimes SET medic_id=:medic_id, time=:time, is_used=:is_used WHERE id=:id''', details)
-            self._db.commit()
+            time = {"id": self.current_time_id, "medic_id": details["medic_id"], "time": details["time"], "is_used": details["is_used"]}
+            query = self.collect_data("priemtimes", "UPDATE WHERE id=:id", time)
+            self.send(query)
 
     def delete_time(self, time_id):
-        self._db.cursor().execute('''
-            DELETE FROM priemtimes WHERE id=:id''', {"id": time_id})
-        self._db.commit()
+        time = {"id": time_id}
+        query = self.collect_data("priemtimes", "DELETE WHERE id=:id", time)
+        self.send(query)
