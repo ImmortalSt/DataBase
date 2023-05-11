@@ -5,12 +5,11 @@ class MedicsContainer : IContainer {
 private:
 	int id = 0;
 	json j;
-	vector<json>* medics;
+	vector<json>* medics = new vector<json>();
 public:
 
 	json getElement(json param) override {
-		if (param["specialty"] == "") return json();
-		for (int i = 0; i, medics->size(); i++) {
+		for (int i = 0; i < medics->size(); i++) {
 			if (param["surname"] == medics->at(i)["surname"] && param["name"] == medics->at(i)["name"]) {
 				return medics->at(i);
 			}

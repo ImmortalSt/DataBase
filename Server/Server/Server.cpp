@@ -34,10 +34,10 @@ void StartLoop(INetwork* network) {
 				users.UpdateElementsParam(recv_msg["param"]);
 			}
 			else if (recv_msg["method"] == "SELECT email, pass, id, is_admin") {
-
+				///////////////////////////////////////////////////////////////////////////////////////
 			}
 			else if (recv_msg["method"] == "SELECT email, name, surname, number, polis, age, id") {
-				//нахуй
+				//нахуй///////////////////////////////////////////////////////////////////////////////////////
 			}
 			else if (recv_msg["method"] == "SELECT email, name, surname, number, polis, age WHERE id=:id") {
 				json j; 
@@ -53,7 +53,7 @@ void StartLoop(INetwork* network) {
 				for (int i = 0; i < users.GetElements()->size(); i++) {
 					users.getElement(recv_msg["param"])["id"];
 					users.getElement(recv_msg["param"])["email"];
-				} 
+				} ///////////////////////////////////////////////////////////////////////////////////////
 				// тут словарь словарей
 			}
 			else if (recv_msg["method"] == "SELECT * WHERE id=:id") {
@@ -73,9 +73,8 @@ void StartLoop(INetwork* network) {
 			}
 			else if (recv_msg["method"] == "SELECT specialty, id") {
 				json j;
-				j["speciality"] = medics.getElement(recv_msg["param"])["speciality"];
-				j["id"] = medics.getElement(recv_msg["param"])["id"];
-				if (recv_msg["param"]["id"] == "") j["speciality"] = j["id"] = "";
+				j["speciality"] = medics.getElement(recv_msg["param"])["speciality"];///////////////////////////////////////////////////////////////////////////////////////
+				j["id"] = medics.getElement(recv_msg["param"])["id"];///////////////////////////////////////////////////////////////////////////////////////
 				network->sendRequest(j.dump());
 			}
 			else if (recv_msg["method"] == "SELECT name, surname, cabinet WHERE id=:id") {
@@ -93,7 +92,7 @@ void StartLoop(INetwork* network) {
 			else if (recv_msg["method"] == "SELECT * WHERE id = :id") {
 				network->sendRequest(medics.getElementById(recv_msg["param"]).dump());
 			}
-			else if (recv_msg["method"] == "UPDATE WHERE id=:id") {
+			else if (recv_msg["method"] == "UPDATE WHERE id=:id") { 
 				medics.UpdateElementsParam(recv_msg["param"]);
 			}
 			else if (recv_msg["method"] == "DELETE WHERE id=:id") {
@@ -106,15 +105,16 @@ void StartLoop(INetwork* network) {
 			}
 			else if ("SELECT time, id WHERE medic_id = :id and is_used = 0") {
 				json j;
-				j["time"] = tmpriems.getElementByMedic(recv_msg["param"])["time"];
-				j["id"] = tmpriems.getElementByMedic(recv_msg["param"])["id"];
+				j["time"] = tmpriems.getElementByMedic(recv_msg["param"])["time"];//// is_used = 0
+				j["id"] = tmpriems.getElementByMedic(recv_msg["param"])["id"];///////////////////////////////////////////////////////////////////////////////////////is_used = 0
+				if ()  // <------
 				network->sendRequest(j.dump());
 			}
 			else if (recv_msg["method"] == "SELECT time WHERE medic_id=:id") {
 				network->sendRequest(tmpriems.getElement(recv_msg["param"])["time"].dump());
 			}
 			else if (recv_msg["method"] == "UPDATE SET is_used = 1 WHERE id=:id") {
-				tmpriems.UpdateElementsParam(recv_msg["param"]);
+				tmpriems.getElementById(recv_msg["param"])["is_used"] = 1;
 			}
 			else if (recv_msg["method"] == "SELECT time, id WHERE medic_id=:id") {
 				json j;
@@ -124,9 +124,9 @@ void StartLoop(INetwork* network) {
 			}
 			else if (recv_msg["method"] == "SELECT * WHERE id=:id") {
 				json j;
-				j["medic_id"] = tmpriems.getElement(recv_msg["param"])["medic_id"];
-				j["time"] = tmpriems.getElement(recv_msg["param"])["time"];
-				j["is_used"] = tmpriems.getElement(recv_msg["param"])["is_used"];
+				//j["medic_id"] = tmpriems.getElement(recv_msg["param"])["medic_id"];
+				//j["time"] = tmpriems.getElement(recv_msg["param"])["time"];///////////////////////////////////////////////////////////////////////////////////////
+				//j["is_used"] = tmpriems.getElement(recv_msg["param"])["is_used"];
 				network->sendRequest(j.dump());
 			}
 			else if (recv_msg["method"] == "UPDATE WHERE id=:id") {
