@@ -304,9 +304,9 @@ class MakeAppointment(Frame):
         layoutmain = Layout([30, 60, 10], fill_frame=True)
         self.add_layout(layoutmain)
         layoutmain.add_widget(Divider(False, 1), 0)
-        self._specialty_choose = DropdownList(label="Специализация", options=self._model.get_medics_specialty(
-        ), on_change=self._show_medic_name_and_cab, fit=True)
-        layoutmain.add_widget(self._specialty_choose, 1)
+        #self._specialty_choose = DropdownList(label="Специализация", options=self._model.get_medics_specialty(
+        #), on_change=self._show_medic_name_and_cab, fit=True)
+        #layoutmain.add_widget(self._specialty_choose, 1)
         self._medic_name = Text(
             label="Ваш врач:", name="medic_name", readonly=True, max_length=30)
         layoutmain.add_widget(self._medic_name, 1)

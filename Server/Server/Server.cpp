@@ -18,14 +18,13 @@ void main(string from_client) {
 }
 
 void StartLoop(INetwork* network) {
+	UsersContainer users;
+	MedicsContainer medics;
+	PriemTimesContainer tmpriems;
+	User_PriemsContainer uspriems;
 	while (true) {
-		UsersContainer users;
-		MedicsContainer medics;
-		PriemTimesContainer tmpriems;
-		User_PriemsContainer uspriems;
 		
 		std::string buffer = network->receiveRequest();
-		std::cout << buffer;
 		nlohmann::json recv_msg = nlohmann::json::parse(buffer);
 		if (recv_msg["db_name"] == "users") {
 			if (recv_msg["method"] == "INSERT") {
@@ -76,6 +75,7 @@ void StartLoop(INetwork* network) {
 				json j;
 				j["speciality"] = medics.getElement(recv_msg["param"])["speciality"];
 				j["id"] = medics.getElement(recv_msg["param"])["id"];
+				if (recv_msg["param"]["id"] == "") j["speciality"] = j["id"] = "";
 				network->sendRequest(j.dump());
 			}
 			else if (recv_msg["method"] == "SELECT name, surname, cabinet WHERE id=:id") {

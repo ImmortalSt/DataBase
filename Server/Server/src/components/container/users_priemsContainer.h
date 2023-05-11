@@ -6,7 +6,7 @@ class User_PriemsContainer : IContainer {
 private:
 	int id = 0;
 	json j;
-	vector<json>* uspriems;
+	vector<json>* uspriems = new vector<json>();
 public:
 
 
@@ -23,6 +23,7 @@ public:
 			if (param["id"] == uspriems->at(i)["id"])
 				return uspriems->at(i);
 		}
+		return json();
 	}
 
 
