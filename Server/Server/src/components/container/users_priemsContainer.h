@@ -12,7 +12,7 @@ public:
 
 	json getElement(json param) override {
 		for (int i = 0; i < uspriems->size(); i++) {
-			if (param["priem"] == uspriems->at(i)["priem"])
+			if (param["user_id"] == uspriems->at(i)["user_id"])
 				return uspriems->at(i);
 		}
 	}
@@ -28,6 +28,7 @@ public:
 		}
 		return json();
 	}
+
 
 
 	int addElement(json &param) override {
