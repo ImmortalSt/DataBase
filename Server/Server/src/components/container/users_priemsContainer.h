@@ -10,8 +10,11 @@ private:
 public:
 
 
-	json getElement(json j) override {
-		throw std::exception("Калл");
+	json getElement(json param) override {
+		for (int i = 0; i < uspriems->size(); i++) {
+			if (param["priem"] == uspriems->at(i)["priem"])
+				return uspriems->at(i);
+		}
 	}
 
 	vector<json>* GetElements() override {
