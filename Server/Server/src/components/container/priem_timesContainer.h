@@ -8,14 +8,27 @@ private:
 	vector<json>* tmpriems;
 public:
 
+	vector<json>* GetElements() override {
+		return tmpriems;
+	}
+
 	json getElement(json param) override {
 		for (int i = 0; i < tmpriems->size(); i++) {
-			if (param["priems"] == tmpriems->at(i)["priems"] && param["id"] == tmpriems->at(i)["id"])
+			if (param["id"] == tmpriems->at(i)["id"])
 				return tmpriems->at(i);
 		}
 	}
 
-	int addElement(json param) override {
+	json getElementByMedic(json param) {
+		for (int i = 0; i < tmpriems->size(); i++) {
+			if (param["mesdic_id"] = tmpriems->at(i)["medic_id"])
+				return tmpriems->at(i);
+		}
+	}
+
+	
+
+	int addElement(json &param) override {
 		if (!(param.contains("id")))
 			param["id"] = ++id;
 		if (!(param.contains("medic_id")))
@@ -28,16 +41,26 @@ public:
 		return 0;
 	}
 
-	int removeElementByParam(json param) override {
+	int removeElementByParam(json &param) override {
 		for (int i = 0; i < tmpriems->size(); i++) {
-			if (param["priems"] == tmpriems->at(i)["priems"] && param["id"] == tmpriems->at(i)["id"]) {
+			if (param["id"] == tmpriems->at(i)["id"]) {
 				tmpriems->erase(tmpriems->begin() + i);
 				return 0;
 			}
 		}
 	}
 
-	int changeElementUsingParam() {
-		return 0;
+	int UpdateElementsParam(json &param) override {
+		for (int i = 0; i < tmpriems->size(); i++) {
+			if (param["id"] == tmpriems->at(i)["id"]) {
+				if (param.contains("medic_id"))
+					tmpriems->at(i)["medic_id"] = param["medic_id"];
+				if (param.contains("user_id"))
+					tmpriems->at(i)["user_id"] = param["user_id"];
+				if (param.contains("is_used"))
+					tmpriems->at(i)["is_used"] = param["is_used"];
+				return 0;
+			}
+		}
 	}
 };

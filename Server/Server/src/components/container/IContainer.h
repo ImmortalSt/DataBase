@@ -6,18 +6,21 @@
 #include <cstdint>
 #include <nlohmann/json.hpp>
 
-using std::string, std::vector, std::list, std::cout, std::endl, nlohmann::json;
-
+using namespace std; /* ::string, std::vector, std::list, std::cout, std::endl, nlohmann::json;*/
+using namespace nlohmann;
 
 class IContainer {
 public:
 
+	virtual json getElementById(json param) = 0;
+
 	virtual json getElement(json j) = 0;
 
-	virtual int addElement(json j) = 0; 
+	virtual int addElement(json &j) = 0; 
 
-	virtual int removeElementByParam(json param) = 0;
+	virtual int removeElementByParam(json &param) = 0;
 	
-	virtual int changeElementUsingParam(json param) = 0;
+	virtual int UpdateElementsParam(json &param) = 0;
 
+	virtual vector<json>* GetElements() = 0;
 };
