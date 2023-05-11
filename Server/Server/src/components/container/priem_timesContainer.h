@@ -12,6 +12,10 @@ public:
 		return tmpriems;
 	}
 
+	json getElementById(json param) override {
+		throw std::exception("Калл");
+	}
+
 	json getElement(json param) override {
 		for (int i = 0; i < tmpriems->size(); i++) {
 			if (param["id"] == tmpriems->at(i)["id"])

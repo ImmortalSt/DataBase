@@ -9,6 +9,11 @@ private:
 	vector<json>* uspriems;
 public:
 
+
+	json getElement(json j) override {
+		throw std::exception("Калл");
+	}
+
 	vector<json>* GetElements() override {
 		return uspriems;
 	}
