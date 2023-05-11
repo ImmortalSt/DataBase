@@ -9,6 +9,7 @@ private:
 public:
 
 	json getElement(json param) override {
+		if (param["specialty"] == "") return json();
 		for (int i = 0; i, medics->size(); i++) {
 			if (param["surname"] == medics->at(i)["surname"] && param["name"] == medics->at(i)["name"]) {
 				return medics->at(i);

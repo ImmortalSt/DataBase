@@ -73,14 +73,14 @@ public:
             return result;
         }
         else {
-            cout << "Server send: " << _msg << endl;
+            cout << "\nServer send: " << _msg << endl;
             return 0;
         }
 
     }
 
     string receiveRequest() override {
-        acceptSock();
+        if (listen_Sock == 0) acceptSock();
         char recvBuffer[512];
         ZeroMemory(recvBuffer, 512);
 
@@ -103,7 +103,7 @@ public:
 
 private:
     SOCKET server;
-    SOCKET listen_Sock;
+    SOCKET listen_Sock = 0;
     SOCKADDR_IN addr;
 };
 
