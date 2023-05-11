@@ -6,8 +6,18 @@ class UsersContainer : IContainer {
 private:
 	int id = 0;
 	json j;
-	vector<json>* users;
+	vector<json>* users = new vector<json>();
 public:
+	UsersContainer() {
+		ifstream file("src\\components\\container\\users.txt");
+		for (int i = 0; i < 5; i++) {
+			string s;
+			getline(file, s);
+			json m = json::parse(s);
+			addElement(m);
+		}
+		file.close();
+	}
 
 	vector<json>* GetElements() override {
 		return users;
