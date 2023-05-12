@@ -4,6 +4,7 @@
 #include <string>
 #include <list>
 #include <cstdint>
+#include <fstream>
 #include "../json/nlohmann/single_include/nlohmann/json.hpp"
 
 using namespace std; /* ::string, std::vector, std::list, std::cout, std::endl, nlohmann::json;*/

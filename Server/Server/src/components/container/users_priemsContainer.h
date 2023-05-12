@@ -9,6 +9,16 @@ private:
 	vector<json>* uspriems = new vector<json>();
 public:
 
+	User_PriemsContainer() {
+		ifstream file("src\\components\\container\\uspriems.txt");
+		for (int i = 0; i < 4; i++) {
+			string s;
+			getline(file, s);
+			json m = json::parse(s);
+			addElement(m);
+		}
+		file.close();
+	}
 
 	json getElement(json param) override {
 		for (int i = 0; i < uspriems->size(); i++) {

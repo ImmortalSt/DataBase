@@ -1,12 +1,22 @@
 #pragma once
-#include "../container/IContainer.h"
 
+#include "../container/IContainer.h"
 class MedicsContainer : IContainer {
 private:
 	int id = 0;
 	json j;
 	vector<json>* medics = new vector<json>();
 public:
+	MedicsContainer() {
+		ifstream file("src\\components\\container\\medics.txt");
+		for (int i = 0; i < 8; i++) {
+			string s;
+			getline(file, s);
+			json m = json::parse(s);
+			addElement(m);
+		}
+		file.close();
+	}
 
 	json getElement(json param) override {
 		for (int i = 0; i < medics->size(); i++) {
@@ -60,8 +70,8 @@ public:
 					medics->at(i)["name"] = param["name"];
 				if (param.contains("surname"))
 					medics->at(i)["surname"] = param["surname"];
-				if (param.contains("specialist"))
-					medics->at(i)["specialist"] = param["specialist"];
+				if (param.contains("speciality"))
+					medics->at(i)["speciality"] = param["speciality"];
 				if (param.contains("cabinet"))
 					medics->at(i)["cabinet"] = param["cabinet"];
 				return 0;
