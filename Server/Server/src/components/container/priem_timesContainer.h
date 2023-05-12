@@ -5,8 +5,18 @@ class PriemTimesContainer : IContainer {
 private:
 	int id = 0;
 	json j;
-	vector<json>* tmpriems;
+	vector<json>* tmpriems = new vector<json>();
 public:
+	PriemTimesContainer() {
+		ifstream file("src\\components\\container\\priemtimes.txt");
+		for (int i = 0; i < 39; i++) {
+			string s;
+			getline(file, s);
+			json m = json::parse(s);
+			addElement(m);
+		}
+		file.close();
+	}
 
 	vector<json>* GetElements() override {
 		return tmpriems;
