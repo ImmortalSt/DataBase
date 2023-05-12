@@ -13,19 +13,22 @@ public:
 	}
 
 	json getElementById(json param) override {
-		throw std::exception("Калл");
-	}
-
-	json getElement(json param) override {
 		for (int i = 0; i < tmpriems->size(); i++) {
 			if (param["id"] == tmpriems->at(i)["id"])
 				return tmpriems->at(i);
 		}
 	}
 
+	json getElement(json param) override {
+		for (int i = 0; i < tmpriems->size(); i++) {
+			if (param["user_id"] == tmpriems->at(i)["user_id"])
+				return tmpriems->at(i);
+		}
+	}
+
 	json getElementByMedic(json param) {
 		for (int i = 0; i < tmpriems->size(); i++) {
-			if (param["mesdic_id"] = tmpriems->at(i)["medic_id"])
+			if (param["medic_id"] = tmpriems->at(i)["medic_id"])
 				return tmpriems->at(i);
 		}
 	}
@@ -36,7 +39,7 @@ public:
 		if (!(param.contains("id")))
 			param["id"] = ++id;
 		if (!(param.contains("medic_id")))
-			param["medeic_id"] = 0;
+			param["medic_id"] = 0;
 		if (!(param.contains("time")))
 			param["time"] = "";
 		if (!(param.contains("is_used")))
