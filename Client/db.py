@@ -1,6 +1,7 @@
 import sqlite3
 import socket
 import json
+import time
 #nc = connect('localhost', 1111)
 
 class LoginModel(object):
@@ -66,13 +67,14 @@ class LoginModel(object):
     def collect_data(self, db_name, method, param):
         data = {"db_name": db_name, "method": method, "param": param}
         return json.dumps(data)
-        
 
     def send(self, data):
         self.client_socket.send(data.encode())
-        
+        time.sleep(0.1)
+
     def receive(self):
         received_data = self.client_socket.recv(1024).decode()
+        print(received_data)
         parsed_data = json.loads(received_data)
         return parsed_data
 
@@ -132,16 +134,17 @@ class LoginModel(object):
         medic_data = {"medic_id": medic_id, "is_used": 0, "time": "", "id": ""}
         query = self.collect_data("priemtimes", "SELECT time, id WHERE medic_id=:id and is_used = 0", medic_data)
         self.send(query)
-        return self.receive()
+        answer = self.receive()
+        return [(i["time"], i["id"]) for i in answer]
 
     def get_medic_specialty(self, medic_id):
         specialty = {"id": medic_id, "specialty": ""}
         query = self.collect_data("medics", "SELECT specialty WHERE id=:id", specialty)
         self.send(query)
-        
+        return self.receive()
 
     def get_medic_time_by_id(self, medic_id):
-        medeic_time = {"id": medic_id, "time": ""}
+        medeic_time = {"medic_id": str(medic_id), "time": ""}
         query = self.collect_data("priemtimes", "SELECT time WHERE medic_id=:id", medeic_time)
         self.send(query)
         return self.receive()

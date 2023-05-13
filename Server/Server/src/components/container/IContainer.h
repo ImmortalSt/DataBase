@@ -6,6 +6,9 @@
 #include <cstdint>
 #include <fstream>
 #include "../json/nlohmann/single_include/nlohmann/json.hpp"
+#include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std; /* ::string, std::vector, std::list, std::cout, std::endl, nlohmann::json;*/
 using namespace nlohmann;

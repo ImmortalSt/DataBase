@@ -3,3 +3,4 @@
 {"id":3,"email":"test2@test2.com","pass":"123","is_admin":null,"number":"13337228322","polis":"54645345","name":"LENA","surname":"GOLOVACH","age":"54"}
 {"id":4,"email":"qwerty@qwerty.com","pass":"123","is_admin":null,"number":"79046245900","polis":"43635474","name":"Макар","surname":"Логунов","age":"18"}
 {"id":5,"email":"admin@admin.com","pass":"admin","is_admin":null,"number":null,"polis":null,"name":null,"surname":null,"age":null}
+{"age":"","email":"test@t.t","id":6,"is_admin":"","name":"","number":"","pass":"test","pass2":"test","polis":"","surname":""}

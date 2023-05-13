@@ -1,8 +1,8 @@
-{"id":1,"name":"Иван","surname":"Иванович","speciality":"Терапевт","cabinet":"10"}
-{"id":2,"name":"Андрей","surname":"Петрович","speciality":"Аллерголог","cabinet":"12"}
-{"id":3,"name":"Анна","surname":"Алексеевна","speciality":"Лор","cabinet":"11"}
-{"id":4,"name":"Галина","surname":"Васильевна","speciality":"Травматолог","cabinet":"13"}
-{"id":5,"name":"Пётр","surname":"Дмитриевич","speciality":"Эндокринолог","cabinet":"14"}
-{"id":6,"name":"Павел","surname":"Хоириевич","speciality":"Проктолог","cabinet":"15"}
-{"id":7,"name":"Максим","surname":"Петрович","speciality":"Психиатр","cabinet":"16"}
-{"id":8,"name":"Альбина","surname":"Сексовна","speciality":"Психолог","cabinet":"17"}
+{"id":1,"name":"Ivan","surname":"Ivanonich","speciality":"Therapist","cabinet":"10"} 
+{"id":2,"name":"Andrew","surname":"Petrovich","speciality":"Allergist","cabinet":"12"}
+{"id":3,"name":"Anna","surname":"Alexeevna","speciality":"ENT specialist","cabinet":"11"}
+{"id":4,"name":"Galina","surname":"Vasilievna","speciality":"Traumatologist","cabinet":"13"}
+{"id":5,"name":"Petr","surname":"Dmitrievich","speciality":"Endocrinologist","cabinet":"14"}
+{"id":6,"name":"Pavel","surname":"Hoirevich","speciality":"Proctologist","cabinet":"15"}
+{"id":7,"name":"Mas","surname":"Petrovich","speciality":"Psychiatrist","cabinet":"16"}
+{"id":8,"name":"Albina","surname":"Seksovna","speciality":"Psychologist","cabinet":"17"}

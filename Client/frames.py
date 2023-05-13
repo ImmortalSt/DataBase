@@ -55,10 +55,10 @@ class LoginMenu(Frame):
         self.itr = 0
         self.usrs = self._model.get_auth_info()
         for row in self.usrs:
-            self.id = row[2]
-            self.email = row[0]
-            self.passw = row[1]
-            self.is_admin = row[3]
+            self.id = row["id"]
+            self.email = row["email"]
+            self.passw = row["pass"]
+            self.is_admin = row["is_admin"]
             if (self.data["email"] == self.email) and (self.data["pass"] == self.passw):
                 self.itr += 1
                 if self.is_admin == '1':
@@ -190,8 +190,7 @@ class UserMenu(Frame):
         layoutmain.add_widget(self._age)
         layoutmain.add_widget(Divider())
         layoutmain.add_widget(Label("Ваши приемы:", align="<"), 0)
-        self._appointments = ListBox(Widget.FILL_FRAME, options=self._model.get_appointments(
-            self._model.current_id), add_scroll_bar=True)
+        self._appointments = ListBox(Widget.FILL_FRAME, add_scroll_bar=True, options="")
         layoutmain.add_widget(self._appointments)
         layoutmain.add_widget(Divider())
         layoutbutton = Layout([1, 1, 1])
@@ -203,9 +202,13 @@ class UserMenu(Frame):
             Button("Изменение данных", self._change_data), 0)
         self.fix()
 
+
     def _reload(self, new_value=None):
-        self._appointments.options = self._model.get_appointments(
-            self._model.current_id)
+        msg = self._model.get_appointments(self._model.current_id)
+        if msg != None:
+            self._appointments.options = [(i["priem"], i["id"])for i in msg]
+        else:
+            self._appointments.options = []
         self._appointments.value = new_value
         self.data = self._model.get_current_user()
 
@@ -304,9 +307,9 @@ class MakeAppointment(Frame):
         layoutmain = Layout([30, 60, 10], fill_frame=True)
         self.add_layout(layoutmain)
         layoutmain.add_widget(Divider(False, 1), 0)
-        #self._specialty_choose = DropdownList(label="Специализация", options=self._model.get_medics_specialty(
-        #), on_change=self._show_medic_name_and_cab, fit=True)
-        #layoutmain.add_widget(self._specialty_choose, 1)
+        options = [(i["speciality"], (i["id"])) for i in self._model.get_medics_specialty()]
+        self._specialty_choose = DropdownList(label="Специализация", options=options, on_change=self._show_medic_name_and_cab, fit=True)
+        layoutmain.add_widget(self._specialty_choose, 1)
         self._medic_name = Text(
             label="Ваш врач:", name="medic_name", readonly=True, max_length=30)
         layoutmain.add_widget(self._medic_name, 1)
@@ -334,10 +337,11 @@ class MakeAppointment(Frame):
     def _show_medic_name_and_cab(self):
         self.id = self._specialty_choose.value
         self.medic = self._model.get_medic_name(self.id)
-        for row in self.medic:
-            self.medic_name = row[0]
-            self.medic_surname = row[1]
-            self.medic_cab = row[2]
+
+        self.medic_surname = self.medic["surname"]
+        self.medic_name = self.medic["name"]
+        self.medic_cab = self.medic["cabinet"]
+
         self.medic_fullname = self.medic_name + ' ' + self.medic_surname
         self._medic_name.value = self.medic_fullname
         self._medic_cab.value = self.medic_cab
@@ -347,11 +351,13 @@ class MakeAppointment(Frame):
         self.save()
         self.id = self._specialty_choose.value
         self.specialty_temp = self._model.get_medic_specialty(self.id)
-        for row in self.specialty_temp:
-            self.specialty = row[0]
+
+        self.specialty = self.specialty_temp["speciality"]
+
         self.time_temp = self._model.get_medic_time_by_id(self.id)
-        for row in self.time_temp:
-            self.time = row[0]
+
+        self.time = self.time_temp
+
         self._appointment_text = self.specialty + ' ' + \
             self.data["medic_name"] + ' в кабинете ' + \
             self.data["cab"] + ' в ' + self.time
@@ -631,7 +637,7 @@ class PriemsList(Frame):
         self.add_layout(layoutmain)
         self._time_list = ListBox(
             Widget.FILL_FRAME,
-            model.admin_get_medic_time(model.current_id),
+            [],
             name="priemtimes",
             add_scroll_bar=True,
             on_change=self._on_pick,

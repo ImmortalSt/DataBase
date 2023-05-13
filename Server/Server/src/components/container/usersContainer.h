@@ -10,13 +10,15 @@ private:
 public:
 	UsersContainer() {
 		ifstream file("src\\components\\container\\users.txt");
-		for (int i = 0; i < 5; i++) {
-			string s;
-			getline(file, s);
+		string s;
+		while (getline(file, s)) {
 			json m = json::parse(s);
-			addElement(m);
+			users->push_back(m);
 		}
+		id = users->size() + 1;
+
 		file.close();
+
 	}
 
 	vector<json>* GetElements() override {
@@ -52,8 +54,11 @@ public:
 			param["surname"] = "";
 		if (!(param.contains("age")))
 			param["age"] = "";
-
+		
 		users->push_back(param);
+		std::ofstream outfile("src\\components\\container\\users.txt", std::ios_base::app);
+		outfile << param << '\n';
+		outfile.close();
 
 		return 0;
 	}
@@ -78,7 +83,7 @@ public:
 					users->at(i)["number"] = param["number"];
 				if (param.contains("polis"))
 					users->at(i)["polis"] = param["polis"];
-				if (param.contains(""))
+				if (param.contains("name"))
 					users->at(i)["name"] = param["name"];
 				if (param.contains("surname"))
 					users->at(i)["surname"] = param["surname"];

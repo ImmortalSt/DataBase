@@ -14,19 +14,6 @@ public:
     virtual string receiveRequest() = 0;
 };
 
-class PlugNetwork : INetwork {
-    int bindSock() override {
-        return 1;
-    }
-    int sendRequest(string msg) override {
-        return 0;
-    }
-    string receiveRequest() override {
-        return "Ivan Ivanov";
-    }
-
-};
-
 class Network : INetwork {
 public:
 
@@ -92,12 +79,11 @@ public:
             cout << "\nRecieved data: " << recvBuff << endl;
             return recvBuff;
         }
-        else if (result == 0)
-            cout << "\nConnection closing" << endl;
         else {
             cout << "\nRecieved failed" << endl;
             closesocket(listen_Sock);
             WSACleanup();
+            return "-1";
         }
     }
 

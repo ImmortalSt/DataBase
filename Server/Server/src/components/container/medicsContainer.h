@@ -9,12 +9,12 @@ private:
 public:
 	MedicsContainer() {
 		ifstream file("src\\components\\container\\medics.txt");
-		for (int i = 0; i < 8; i++) {
-			string s;
-			getline(file, s);
+		string s;
+		while (getline(file, s)) {
 			json m = json::parse(s);
-			addElement(m);
+			medics->push_back(m);
 		}
+		id = medics->size() + 1;
 		file.close();
 	}
 
@@ -48,6 +48,10 @@ public:
 			param["speciality"] = "";
 		if (!(param.contains("cabinet")))
 			param["cabinet"] = 666;
+
+		std::ofstream outfile("src\\components\\container\\medics.txt", std::ios_base::app);
+		outfile << param << '\n';
+		outfile.close();
 		medics->push_back(param);
 		return 0;
 	}

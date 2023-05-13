@@ -11,16 +11,18 @@ public:
 
 	User_PriemsContainer() {
 		ifstream file("src\\components\\container\\uspriems.txt");
-		for (int i = 0; i < 4; i++) {
-			string s;
-			getline(file, s);
+		string s;
+		while (getline(file, s)) {
 			json m = json::parse(s);
-			addElement(m);
+			uspriems->push_back(m);
 		}
+		id = uspriems->size() + 1;
+
 		file.close();
 	}
 
 	json getElement(json param) override {
+
 		for (int i = 0; i < uspriems->size(); i++) {
 			if (param["user_id"] == uspriems->at(i)["user_id"])
 				return uspriems->at(i);
@@ -44,7 +46,9 @@ public:
 	int addElement(json &param) override {
 		if (!(param.contains("id"))) 
 			param["id"] = ++id;
-
+		std::ofstream outfile("src\\components\\container\\uspriems.txt", std::ios_base::app);
+		outfile << param << '\n';
+		outfile.close();
 		uspriems->push_back(param);
 		return 0;
 

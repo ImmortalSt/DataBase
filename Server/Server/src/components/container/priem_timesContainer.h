@@ -9,12 +9,13 @@ private:
 public:
 	PriemTimesContainer() {
 		ifstream file("src\\components\\container\\priemtimes.txt");
-		for (int i = 0; i < 39; i++) {
-			string s;
-			getline(file, s);
+		string s;
+		while (getline(file, s)) {
 			json m = json::parse(s);
-			addElement(m);
+			tmpriems->push_back(m);
 		}
+		id = tmpriems->size() + 1;
+
 		file.close();
 	}
 
@@ -38,7 +39,7 @@ public:
 
 	json getElementByMedic(json param) {
 		for (int i = 0; i < tmpriems->size(); i++) {
-			if (param["medic_id"] = tmpriems->at(i)["medic_id"])
+			if (param["medic_id"] == tmpriems->at(i)["medic_id"])
 				return tmpriems->at(i);
 		}
 	}
@@ -54,6 +55,11 @@ public:
 			param["time"] = "";
 		if (!(param.contains("is_used")))
 			param["is_used"] = 1;
+
+
+		std::ofstream outfile("src\\components\\container\\priemtimes.txt", std::ios_base::app);
+		outfile << param << '\n';
+		outfile.close();
 		tmpriems->push_back(param);
 		return 0;
 	}
