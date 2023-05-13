@@ -201,6 +201,9 @@
     <ClInclude Include="src\components\json\nlohmann\single_include\nlohmann\json.hpp" />
     <ClInclude Include="src\components\NetworkModule\NetworkModule.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\components\NetworkModule\log.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

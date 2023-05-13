@@ -183,4 +183,7 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\components\NetworkModule\log.txt" />
+  </ItemGroup>
 </Project>

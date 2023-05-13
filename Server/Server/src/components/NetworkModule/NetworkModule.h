@@ -1,6 +1,9 @@
 #ifndef NETWORKMODULE_H
 #define NETWORKMODULE_H
 #include <iostream>
+#include <string>
+#include <iostream>
+#include <fstream>
 #pragma comment(lib, "ws2_32.lib")
 #include <winsock2.h>
 #pragma warning(disable:4996)
@@ -60,7 +63,12 @@ public:
             return result;
         }
         else {
-            cout << "\nServer send: " << _msg << endl;
+            std::string log = "\nServer send: " + _msg + '\n';
+            std::ofstream outfile("C:\\Users\\Comp\\Documents\\Roguelike\\DataBase\\Server\\Server\\src\\components\\NetworkModule\\log.txt", std::ios_base::app);
+            outfile << log << '\n';
+            outfile.close();
+            std::cout << log;
+            cout << log << endl;
             return 0;
         }
 
@@ -75,8 +83,11 @@ public:
         string recvBuff(recvBuffer);
 
         if (result > 0) {
-            cout << "\nRecieved bytes: " << result << endl;
-            cout << "\nRecieved data: " << recvBuff << endl;
+            std::string log = "\nRecieved bytes: " + std::to_string(result) + "\n" + "\nRecieved data : " + recvBuff + '\n';
+            std::ofstream outfile("C:\\Users\\Comp\\Documents\\Roguelike\\DataBase\\Server\\Server\\src\\components\\NetworkModule\\log.txt", std::ios_base::app);
+            outfile << log << '\n';
+            outfile.close();
+            std::cout << log;
             return recvBuff;
         }
         else {

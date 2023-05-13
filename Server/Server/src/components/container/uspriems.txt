@@ -4,3 +4,5 @@
 {"id":4,"user_id":4,"priem":"Лор Анна Алексеевна в кабинете 11 в 2023-04-15 12:00"}
 {"id":6,"priem":"Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","user_id":6}
 {"id":7,"priem":"Proctologist Pavel Hoirevich в кабинете 15 в 2023-04-25 13:00","user_id":6}
+{"id":8,"priem":"Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","user_id":6}
+{"id":9,"priem":"Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","user_id":6}
