@@ -334,6 +334,9 @@ class MakeAppointment(Frame):
         layoutbuttons.add_widget(self._return_button, 1)
         self.fix()
 
+    def reset(self):
+        super(MakeAppointment, self).reset()
+        
     def _show_medic_name_and_cab(self):
         self.id = self._specialty_choose.value
         self.medic = self._model.get_medic_name(self.id)
