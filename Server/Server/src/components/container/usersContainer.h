@@ -93,9 +93,15 @@ public:
 					users->at(i)["email"] = param["email"];
 				if (param.contains("pass"))
 					users->at(i)["pass"] = param["pass"];
-				return 0;
+				
 			}
 		}
+		std::ofstream outfile("src\\components\\container\\users.txt", std::ios_base::trunc);
+		for (int i = 0; i < users->size(); i++) {
+			outfile << users->at(i) << "\n";
+		}
+		outfile.close();
+		return 0;
 	}
 
 

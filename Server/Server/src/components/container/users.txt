@@ -1,6 +1,7 @@
-{"id":1,"email":"test@test.com","pass":"123","is_admin":null,"number":"46745756775","polis":"65785675","name":"daww","surname":"amt","age":"19"}
-{"id":2,"email":"test2@test.com","pass":"123","is_admin":null,"number":"11","polis":null,"name":null,"surname":null,"age":null}
-{"id":3,"email":"test2@test2.com","pass":"123","is_admin":null,"number":"13337228322","polis":"54645345","name":"LENA","surname":"GOLOVACH","age":"54"}
-{"id":4,"email":"qwerty@qwerty.com","pass":"123","is_admin":null,"number":"79046245900","polis":"43635474","name":"Макар","surname":"Логунов","age":"18"}
-{"id":5,"email":"admin@admin.com","pass":"admin","is_admin":null,"number":null,"polis":null,"name":null,"surname":null,"age":null}
+{"age":"19","email":"test@test.com","id":1,"is_admin":null,"name":"daww","number":"46745756775","pass":"123","polis":"65785675","surname":"amt"}
+{"age":null,"email":"test2@test.com","id":2,"is_admin":null,"name":null,"number":"11","pass":"123","polis":null,"surname":null}
+{"age":"54","email":"test2@test2.com","id":3,"is_admin":null,"name":"LENA","number":"13337228322","pass":"123","polis":"54645345","surname":"GOLOVACH"}
+{"age":"18","email":"qwerty@qwerty.com","id":4,"is_admin":null,"name":"Макар","number":"79046245900","pass":"123","polis":"43635474","surname":"Логунов"}
+{"age":null,"email":"admin@admin.com","id":5,"is_admin":null,"name":null,"number":null,"pass":"admin","polis":null,"surname":null}
 {"age":"","email":"test@t.t","id":6,"is_admin":"","name":"","number":"","pass":"test","pass2":"test","polis":"","surname":""}
+{"age":"43","email":"test@test.ru","id":8,"is_admin":"","name":"kjfsd","number":"434435","pass":"era","pass2":"era","polis":"43432432","surname":"dasfads"}
