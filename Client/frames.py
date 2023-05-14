@@ -292,6 +292,7 @@ class MakeAppointment(Frame):
         super(MakeAppointment, self).__init__(screen,
                                               screen.height * 2 // 2,
                                               screen.width * 2 // 3,
+                                              on_load=self.reset,
                                               hover_focus=True,
                                               can_scroll=False,
                                               title="Запись к врачу",
@@ -307,7 +308,7 @@ class MakeAppointment(Frame):
         layoutmain = Layout([30, 60, 10], fill_frame=True)
         self.add_layout(layoutmain)
         layoutmain.add_widget(Divider(False, 1), 0)
-        options = [(i["speciality"], (i["id"])) for i in self._model.get_medics_specialty()]
+        options = self._model.get_medics_specialty()
         self._specialty_choose = DropdownList(label="Специализация", options=options, on_change=self._show_medic_name_and_cab, fit=True)
         layoutmain.add_widget(self._specialty_choose, 1)
         self._medic_name = Text(
@@ -334,8 +335,13 @@ class MakeAppointment(Frame):
         layoutbuttons.add_widget(self._return_button, 1)
         self.fix()
 
-    def reset(self):
-        super(MakeAppointment, self).reset()
+    def reset(self, new_data=None):
+        self._specialty_choose.options = self.options
+        self._specialty_choose.value = 1
+        self._medic_cab.value = ""
+        self._medic_name.value = ""
+        self._time_choose.options = [("/Выберите врача/", 1)]
+        self._time_choose.value = 1
         
     def _show_medic_name_and_cab(self):
         self.id = self._specialty_choose.value
@@ -537,7 +543,7 @@ class MedicList(Frame):
         self.add_layout(layoutmain)
         self._medic_list = ListBox(
             Widget.FILL_FRAME,
-            model.get_medics_specialty(),
+            options=model.get_medics_specialty(),
             name="medics",
             add_scroll_bar=True,
             on_change=self._on_pick,

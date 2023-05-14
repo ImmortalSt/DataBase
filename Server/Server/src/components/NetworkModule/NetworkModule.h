@@ -68,7 +68,6 @@ public:
             outfile << log << '\n';
             outfile.close();
             std::cout << log;
-            cout << log << endl;
             return 0;
         }
 

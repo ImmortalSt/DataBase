@@ -119,7 +119,7 @@ void StartLoop(INetwork* network) {
 				j["speciality"] = medics.getElementById(recv_msg["param"])["speciality"];
 				network->sendRequest(j.dump());
 			}
-			else if (recv_msg["method"] == "SELECT * WHERE id = :id") {
+			else if (recv_msg["method"] == "SELECT * WHERE id=:id") {
 				network->sendRequest(medics.getElementById(recv_msg["param"]).dump());
 			}
 			else if (recv_msg["method"] == "UPDATE WHERE id=:id") {

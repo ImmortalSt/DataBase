@@ -3,5 +3,5 @@
 {"age":"54","email":"test2@test2.com","id":3,"is_admin":null,"name":"LENA","number":"13337228322","pass":"123","polis":"54645345","surname":"GOLOVACH"}
 {"age":"18","email":"qwerty@qwerty.com","id":4,"is_admin":null,"name":"Макар","number":"79046245900","pass":"123","polis":"43635474","surname":"Логунов"}
 {"age":null,"email":"admin@admin.com","id":5,"is_admin":null,"name":null,"number":null,"pass":"admin","polis":null,"surname":null}
-{"age":"","email":"test@t.t","id":6,"is_admin":"","name":"","number":"","pass":"test","pass2":"test","polis":"","surname":""}
+{"age":"1","email":"test@t.t","id":6,"is_admin":"1","name":"test","number":"1","pass":"test","pass2":"test","polis":"1","surname":"test"}
 {"age":"43","email":"test@test.ru","id":8,"is_admin":"","name":"kjfsd","number":"434435","pass":"era","pass2":"era","polis":"43432432","surname":"dasfads"}

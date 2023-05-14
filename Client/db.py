@@ -122,7 +122,7 @@ class LoginModel(object):
         query_params = {"specialty": "", "id": ""}
         query_result = self.collect_data("medics", "SELECT specialty, id", query_params)
         self.send(query_result)
-        return self.receive()
+        return [(i["speciality"], i["id"]) for i in self.receive()]
 
     def get_medic_name(self, medic_id):
         medic_data = {"id": medic_id, "name:": "", "surname": "", "cabinet": ""}
@@ -171,7 +171,7 @@ class LoginModel(object):
         users_list = {"email": "", "id": ""}
         query = self.collect_data("users", "SELECT email, id", users_list)
         self.send(query)
-        return self.receive()
+        return [(i["email"], i["id"]) for i in self.receive()]
         
     def admin_get_user(self, user_id):
         get_user = {"id": user_id, "email": "", "pass": "", "is_admin": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}

@@ -6,3 +6,4 @@
 {"id":6,"name":"Pavel","surname":"Hoirevich","speciality":"Proctologist","cabinet":"15"}
 {"id":7,"name":"Mas","surname":"Petrovich","speciality":"Psychiatrist","cabinet":"16"}
 {"id":8,"name":"Albina","surname":"Seksovna","speciality":"Psychologist","cabinet":"17"}
+{"cabinet":"12","id":10,"name":"Ni","speciality":"","specialty":"AA","surname":"Ni"}

@@ -22,3 +22,1627 @@ Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param":
 
 Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
 
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : ""},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 122
+
+Recieved data : {"db_name": "user_priems", "method": "SELECT priem, id WHERE user_id=:id", "param": {"user_id": 6, "priem": "", "id": ""}}
+
+
+Server send: [{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 6},{"priem" : "Proctologist Pavel Hoirevich в кабинете 15 в 2023-04-25 13:00","id" : 7},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 8},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 9}]
+
+
+Recieved bytes: 192
+
+Recieved data : {"db_name": "users", "method": "SELECT email, name, surname, number, polis, age WHERE id=:id", "param": {"id": 6, "email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"","email":"test@t.t","name":"","number":"","polis":"","surname":""}
+
+
+Recieved bytes: 192
+
+Recieved data : {"db_name": "users", "method": "SELECT email, name, surname, number, polis, age WHERE id=:id", "param": {"id": 6, "email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"","email":"test@t.t","name":"","number":"","polis":"","surname":""}
+
+
+Recieved bytes: 244
+
+Recieved data : {"db_name": "users", "method": "UPDATE SET name=:name, surname=:surname, number=:number, polis=:polis, age =:age WHERE id=:id", "param": {"age": "1", "email": "test@t.t", "name": "test", "number": "1", "polis": "1", "surname": "test", "id": 6}}
+
+
+Recieved bytes: 122
+
+Recieved data : {"db_name": "user_priems", "method": "SELECT priem, id WHERE user_id=:id", "param": {"user_id": 6, "priem": "", "id": ""}}
+
+
+Server send: [{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 6},{"priem" : "Proctologist Pavel Hoirevich в кабинете 15 в 2023-04-25 13:00","id" : 7},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 8},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 9}]
+
+
+Recieved bytes: 192
+
+Recieved data : {"db_name": "users", "method": "SELECT email, name, surname, number, polis, age WHERE id=:id", "param": {"id": 6, "email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"1","email":"test@t.t","name":"test","number":"1","polis":"1","surname":"test"}
+
+
+Recieved bytes: 140
+
+Recieved data : {"db_name": "medics", "method": "SELECT name, surname, cabinet WHERE id=:id", "param": {"id": 2, "name:": "", "surname": "", "cabinet": ""}}
+
+
+Server send: {"cabinet":"12","name":"Andrew","surname":"Petrovich"}
+
+
+Recieved bytes: 151
+
+Recieved data : {"db_name": "priemtimes", "method": "SELECT time, id WHERE medic_id=:id and is_used = 0", "param": {"medic_id": 2, "is_used": 0, "time": "", "id": ""}}
+
+
+Server send: [{"time" : "2023-04-10 10:00","id" : 6},{"time" : "2023-04-11 11:00","id" : 7},{"time" : "2023-04-13 14:00","id" : 8},{"time" : "2023-04-13 12:00","id" : 9},{"time" : "2023-04-15 10:00","id" : 10}]
+
+
+Recieved bytes: 101
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty WHERE id=:id", "param": {"id": 2, "specialty": ""}}
+
+
+Server send: {"speciality":"Allergist"}
+
+
+Recieved bytes: 109
+
+Recieved data : {"db_name": "priemtimes", "method": "SELECT time WHERE medic_id=:id", "param": {"medic_id": "2", "time": ""}}
+
+
+Server send: "2023-04-10 10:00"
+
+
+Recieved bytes: 108
+
+Recieved data : {"db_name": "priemtimes", "method": "UPDATE SET is_used = 1 WHERE id=:id", "param": {"id": 6, "is_used": 1}}
+
+
+Recieved bytes: 193
+
+Recieved data : {"db_name": "user_priems", "method": "INSERT", "param": {"user_id": 6, "priem": "Allergist Andrew Petrovich \u0432 \u043a\u0430\u0431\u0438\u043d\u0435\u0442\u0435 12 \u0432 2023-04-10 10:00"}}
+
+
+Recieved bytes: 122
+
+Recieved data : {"db_name": "user_priems", "method": "SELECT priem, id WHERE user_id=:id", "param": {"user_id": 6, "priem": "", "id": ""}}
+
+
+Server send: [{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 6},{"priem" : "Proctologist Pavel Hoirevich в кабинете 15 в 2023-04-25 13:00","id" : 7},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 8},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 9},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 11}]
+
+
+Recieved bytes: 192
+
+Recieved data : {"db_name": "users", "method": "SELECT email, name, surname, number, polis, age WHERE id=:id", "param": {"id": 6, "email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"1","email":"test@t.t","name":"test","number":"1","polis":"1","surname":"test"}
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : ""},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 122
+
+Recieved data : {"db_name": "user_priems", "method": "SELECT priem, id WHERE user_id=:id", "param": {"user_id": 6, "priem": "", "id": ""}}
+
+
+Server send: [{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 6},{"priem" : "Proctologist Pavel Hoirevich в кабинете 15 в 2023-04-25 13:00","id" : 7},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 8},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 9},{"priem" : "Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","id" : 11}]
+
+
+Recieved bytes: 192
+
+Recieved data : {"db_name": "users", "method": "SELECT email, name, surname, number, polis, age WHERE id=:id", "param": {"id": 6, "email": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"1","email":"test@t.t","name":"test","number":"1","polis":"1","surname":"test"}
+
+
+Recieved bytes: 140
+
+Recieved data : {"db_name": "medics", "method": "SELECT name, surname, cabinet WHERE id=:id", "param": {"id": 2, "name:": "", "surname": "", "cabinet": ""}}
+
+
+Server send: {"cabinet":"12","name":"Andrew","surname":"Petrovich"}
+
+
+Recieved bytes: 151
+
+Recieved data : {"db_name": "priemtimes", "method": "SELECT time, id WHERE medic_id=:id and is_used = 0", "param": {"medic_id": 2, "is_used": 0, "time": "", "id": ""}}
+
+
+Server send: [{"time" : "2023-04-11 11:00","id" : 7},{"time" : "2023-04-13 14:00","id" : 8},{"time" : "2023-04-13 12:00","id" : 9},{"time" : "2023-04-15 10:00","id" : 10}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 181
+
+Recieved data : {"db_name": "users", "method": "SELECT * WHERE id=:id", "param": {"id": 1, "email": "", "pass": "", "is_admin": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"19","email":"test@test.com","id":1,"is_admin":null,"name":"daww","number":"46745756775","pass":"123","polis":"65785675","surname":"amt"}
+
+
+Recieved bytes: 207
+
+Recieved data : {"db_name": "users", "method": "UPDATE WHERE id=:id", "param": {"id": 1, "email": "test@test.com", "pass": "123", "name": "daww", "surname": "amt", "number": "46745756775", "polis": "65785675", "age": "19"}}
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 135
+
+Recieved data : {"db_name": "medics", "method": "SELECT * WHERE id=:id", "param": {"id": 5, "name": "", "surname": "", "specialty": "", "cabinet": ""}}
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 132
+
+Recieved data : {"db_name": "users", "method": "SELECT email, pass, id, is_admin", "param": {"email": "", "password": "", "id": "", "is_admin": ""}}
+
+
+Server send: [{"email" : "test@test.com","pass" : "123","id" : 1,"is_admin" : null},{"email" : "test2@test.com","pass" : "123","id" : 2,"is_admin" : null},{"email" : "test2@test2.com","pass" : "123","id" : 3,"is_admin" : null},{"email" : "qwerty@qwerty.com","pass" : "123","id" : 4,"is_admin" : null},{"email" : "admin@admin.com","pass" : "admin","id" : 5,"is_admin" : null},{"email" : "test@t.t","pass" : "test","id" : 6,"is_admin" : "1"},{"email" : "test@test.ru","pass" : "era","id" : 8,"is_admin" : ""}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 135
+
+Recieved data : {"db_name": "medics", "method": "SELECT * WHERE id=:id", "param": {"id": 2, "name": "", "surname": "", "specialty": "", "cabinet": ""}}
+
+
+Server send: {"cabinet":"12","id":2,"name":"Andrew","speciality":"Allergist","surname":"Petrovich"}
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8}]
+
+
+Recieved bytes: 119
+
+Recieved data : {"db_name": "medics", "method": "INSERT", "param": {"name": "Ni", "surname": "Ni", "specialty": "AA", "cabinet": "12"}}
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8},{"speciality" : "","id" : 10}]
+
+
+Recieved bytes: 136
+
+Recieved data : {"db_name": "medics", "method": "SELECT * WHERE id=:id", "param": {"id": 10, "name": "", "surname": "", "specialty": "", "cabinet": ""}}
+
+
+Server send: {"cabinet":"12","id":10,"name":"Ni","speciality":"","specialty":"AA","surname":"Ni"}
+
+
+Recieved bytes: 142
+
+Recieved data : {"db_name": "medics", "method": "UPDATE WHERE id=:id", "param": {"id": 10, "name": "Ni", "surname": "Ni", "specialty": "AA", "cabinet": "12"}}
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8},{"speciality" : "","id" : 10}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 181
+
+Recieved data : {"db_name": "users", "method": "SELECT * WHERE id=:id", "param": {"id": 3, "email": "", "pass": "", "is_admin": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"54","email":"test2@test2.com","id":3,"is_admin":null,"name":"LENA","number":"13337228322","pass":"123","polis":"54645345","surname":"GOLOVACH"}
+
+
+Recieved bytes: 214
+
+Recieved data : {"db_name": "users", "method": "UPDATE WHERE id=:id", "param": {"id": 3, "email": "test2@test2.com", "pass": "123", "name": "LENA", "surname": "GOLOVACH", "number": "13337228322", "polis": "54645345", "age": "54"}}
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 181
+
+Recieved data : {"db_name": "users", "method": "SELECT * WHERE id=:id", "param": {"id": 8, "email": "", "pass": "", "is_admin": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"43","email":"test@test.ru","id":8,"is_admin":"","name":"kjfsd","number":"434435","pass":"era","pass2":"era","polis":"43432432","surname":"dasfads"}
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8},{"speciality" : "","id" : 10}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8},{"speciality" : "","id" : 10}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8},{"speciality" : "","id" : 10}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 93
+
+Recieved data : {"db_name": "medics", "method": "SELECT specialty, id", "param": {"specialty": "", "id": ""}}
+
+
+Server send: [{"speciality" : "Therapist","id" : 1},{"speciality" : "Allergist","id" : 2},{"speciality" : "ENT specialist","id" : 3},{"speciality" : "Traumatologist","id" : 4},{"speciality" : "Endocrinologist","id" : 5},{"speciality" : "Proctologist","id" : 6},{"speciality" : "Psychiatrist","id" : 7},{"speciality" : "Psychologist","id" : 8},{"speciality" : "","id" : 10}]
+
+
+Recieved bytes: 84
+
+Recieved data : {"db_name": "users", "method": "SELECT email, id", "param": {"email": "", "id": ""}}
+
+
+Server send: [{"email" : "test@test.com","id" : 1},{"email" : "test2@test.com","id" : 2},{"email" : "test2@test2.com","id" : 3},{"email" : "qwerty@qwerty.com","id" : 4},{"email" : "admin@admin.com","id" : 5},{"email" : "test@t.t","id" : 6},{"email" : "test@test.ru","id" : 8}]
+
+
+Recieved bytes: 181
+
+Recieved data : {"db_name": "users", "method": "SELECT * WHERE id=:id", "param": {"id": 3, "email": "", "pass": "", "is_admin": "", "name": "", "surname": "", "number": "", "polis": "", "age": ""}}
+
+
+Server send: {"age":"54","email":"test2@test2.com","id":3,"is_admin":null,"name":"LENA","number":"13337228322","pass":"123","polis":"54645345","surname":"GOLOVACH"}
+
