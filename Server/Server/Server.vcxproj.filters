@@ -185,5 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\components\NetworkModule\log.txt" />
+    <Text Include="src\components\container\medics.txt" />
+    <Text Include="src\components\container\users.txt" />
+    <Text Include="src\components\container\priemtimes.txt" />
+    <Text Include="src\components\container\uspriems.txt" />
   </ItemGroup>
 </Project>

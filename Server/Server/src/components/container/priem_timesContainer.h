@@ -82,8 +82,15 @@ public:
 					tmpriems->at(i)["user_id"] = param["user_id"];
 				if (param.contains("is_used"))
 					tmpriems->at(i)["is_used"] = param["is_used"];
-				return 0;
+				
 			}
+
 		}
+		std::ofstream outfile("src\\components\\container\\priemtimes.txt", std::ios_base::trunc);
+		for (int i = 0; i, tmpriems->size(); i++) {
+			outfile << tmpriems->at(i) << "\n";
+		}
+		outfile.close();
+		return 0;
 	}
 };

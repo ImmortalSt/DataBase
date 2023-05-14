@@ -202,6 +202,10 @@
     <ClInclude Include="src\components\NetworkModule\NetworkModule.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="src\components\container\medics.txt" />
+    <Text Include="src\components\container\priemtimes.txt" />
+    <Text Include="src\components\container\users.txt" />
+    <Text Include="src\components\container\uspriems.txt" />
     <Text Include="src\components\NetworkModule\log.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
