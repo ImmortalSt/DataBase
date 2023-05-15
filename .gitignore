@@ -1,4 +1,5 @@
 # Prerequisites
+*.spec
 .vs/
 *.d
 build/
