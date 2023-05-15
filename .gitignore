@@ -1,6 +1,7 @@
 # Prerequisites
+.vs/
 *.d
-
+build/
 Server/.vs/
 Server/Server/x64/
 Server/x64/
@@ -31,7 +32,6 @@ Server/x64/
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app
 

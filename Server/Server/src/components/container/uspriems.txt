@@ -8,3 +8,4 @@
 {"id":9,"priem":"Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","user_id":6}
 {"id":10,"priem":"Traumatologist Galina Vasilievna в кабинете 13 в 2023-04-20 20:00","user_id":8}
 {"id":11,"priem":"Allergist Andrew Petrovich в кабинете 12 в 2023-04-10 10:00","user_id":6}
+{"id":12,"priem":"Endocrinologist Petr Dmitrievich в кабинете 14 в 2023-04-24 10:00","user_id":1}

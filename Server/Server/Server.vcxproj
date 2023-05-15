@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Server.cpp" />
+    <ClCompile Include="src\components\RC4\cRC4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\components\container\Hashpointer.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="src\components\json\nlohmann\include\nlohmann\thirdparty\hedley\hedley_undef.hpp" />
     <ClInclude Include="src\components\json\nlohmann\single_include\nlohmann\json.hpp" />
     <ClInclude Include="src\components\NetworkModule\NetworkModule.h" />
+    <ClInclude Include="src\components\RC4\cRC4.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\components\container\medics.txt" />
