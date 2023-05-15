@@ -1,64 +1,16 @@
-import sqlite3
 import socket
 import json
 import time
-#nc = connect('localhost', 1111)
+from RC4Encryption import RC4Encryption
 
 class LoginModel(object):
     def __init__(self):
+        self.rc4 = RC4Encryption(b'strong_key')
+        self.rc4.make_key()
         self.host = '127.0.0.1'
         self.port = 1111
         self.client_socket = socket.socket()
         self.client_socket.connect((self.host, self.port))
-        self._db = sqlite3.connect('basenewtest.db')
-        self._db.row_factory = sqlite3.Row
-
-        self._db.cursor().execute('''
-            CREATE TABLE IF NOT EXISTS users(
-            id INTEGER PRIMARY KEY,
-            email TEXT,
-            pass TEXT,
-            is_admin TEXT,
-            number INTEGER,
-            polis INTEGER,
-            name TEXT,
-            surname TEXT,
-            age INTEGER,
-            priem BLOB,
-            priemtime FLOAT
-            )
-        ''')
-        self._db.commit()
-
-
-        self._db.cursor().execute('''
-            CREATE TABLE IF NOT EXISTS medics(
-            id INTEGER PRIMARY KEY,
-            name TEXT,
-            surname TEXT,
-            specialty TEXT,
-            cabinet INTEGER
-            )
-        ''')
-        self._db.commit()
-
-        self._db.cursor().execute('''
-            CREATE TABLE IF NOT EXISTS priemtimes(
-            id INTEGER PRIMARY KEY,
-            medic_id INTEGER,
-            time TEXT
-            )
-        ''')
-        self._db.commit()
-
-        self._db.cursor().execute('''
-        CREATE TABLE IF NOT EXISTS user_priems(
-        id INTEGER PRIMARY KEY,
-        user_id INTEGER,
-        priem TEXT
-        )
-        ''')
-        self._db.commit()
 
         # Current contact when editing.
         self.current_id = None
@@ -69,13 +21,18 @@ class LoginModel(object):
         return json.dumps(data)
 
     def send(self, data):
-        self.client_socket.send(data.encode())
+        self.rc4.reset(b'strong_key')
+        self.rc4.make_key()
+        self.cipher = self.rc4.crypt(bytes(data, 'utf-8'))
+        self.client_socket.send(self.cipher)
         time.sleep(0.1)
 
     def receive(self):
-        received_data = self.client_socket.recv(1024).decode()
-        print(received_data)
-        parsed_data = json.loads(received_data)
+        self.rc4.reset(b'strong_key')
+        self.rc4.make_key()
+        received_data = self.client_socket.recv(2048)
+        deciphered_data = self.rc4.crypt(received_data).decode()
+        parsed_data = json.loads(deciphered_data)
         return parsed_data
 
     def add(self, user_data):

@@ -18,8 +18,10 @@ class LoginMenu(Frame):
         layoutdiv = Layout([1])
         self.add_layout(layoutdiv)
         layoutdiv.add_widget(Divider(height=2, draw_line=False))
-        layoutdiv.add_widget(Label(label="Госуслуги", align="^", height=1))
-        layoutdiv.add_widget(Divider(height=5, draw_line=False))
+        layoutdiv.add_widget(Label(label="Госуслуги", align="^", height=2))
+        layoutdiv.add_widget(Label(label="Ваше подключение защищено шифрованием",align="^", height=1))
+        layoutdiv.add_widget(Label(label="При каждой попытке эксплуатации SQLi умирает один котенок", align="^", height=1))
+        layoutdiv.add_widget(Divider(height=2, draw_line=False))
 
         layout = Layout([30, 30, 30], fill_frame=True)
         self.add_layout(layout)
@@ -308,8 +310,8 @@ class MakeAppointment(Frame):
         layoutmain = Layout([30, 60, 10], fill_frame=True)
         self.add_layout(layoutmain)
         layoutmain.add_widget(Divider(False, 1), 0)
-        options = self._model.get_medics_specialty()
-        self._specialty_choose = DropdownList(label="Специализация", options=options, on_change=self._show_medic_name_and_cab, fit=True)
+        self.options = self._model.get_medics_specialty()
+        self._specialty_choose = DropdownList(label="Специализация", options=self.options, on_change=self._show_medic_name_and_cab, fit=True)
         layoutmain.add_widget(self._specialty_choose, 1)
         self._medic_name = Text(
             label="Ваш врач:", name="medic_name", readonly=True, max_length=30)
